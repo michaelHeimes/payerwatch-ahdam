@@ -1,0 +1,149 @@
+.relative {
+	position: relative;
+}
+
+a.view-all-link {
+	display: inline-flex;
+	align-items: center;
+	text-transform: uppercase;
+}
+
+.black {
+	color: $black !important;
+}
+
+.white {
+	color: $white !important;
+}
+
+.mint {
+	color: $brand-mint !important;
+}
+
+.navy {
+	color: $brand-navy !important;
+}
+
+.brand-blue {
+	color: $brand-blue !important;
+}
+
+.brand-royal {
+	color: $brand-royal !important;
+}
+
+.violet {
+	color: $brand-violet !important;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.has-bg {
+	position: relative;
+	overflow: hidden;
+}
+
+.bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-size: cover;
+	background-position: center center;
+	
+&.banner-bg-skew {
+	transform: skew($skew) translateX(0);
+}
+	
+}
+
+.bg.pull-left {
+	width: 128%;
+	left: -28%;
+}
+
+.bg.pull-right {
+	width: 128%;
+	left: auto;
+	right: -28%;
+}
+
+.white-bg {
+	background-color: $white;
+}
+
+.sky-blue-bg {
+	background-color: $brand-sky-blue;
+}
+
+.royal-blue-bg,
+.blue-bg,
+.navy-bg,
+.violet-bg {
+	color: $white;
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $white;
+	}	
+		
+}
+
+.royal-blue-bg,
+.blue-bg,
+.transparent-bg,
+.violet-bg,
+.mint-bg {
+	.gform_wrapper.gravity-theme {
+		[type=color], [type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], textarea, select {
+			background-color: $white;
+			color: $brand-blue;
+			&::placeholder {
+				color: $brand-blue;
+			}
+		}
+		.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn)[type=submit] {
+			background-color: $white;
+		}
+	}
+}
+
+.royal-blue-bg {
+	background-color: $brand-royal;
+}
+
+.blue-bg {
+	background-color: $brand-blue;
+}
+
+.navy-bg {
+	background-color: $brand-navy;
+}
+
+.violet-bg {
+	background-color: $brand-violet;
+}
+
+.mint-bg {
+	background-color: $brand-mint;
+}
+
+
+
+.royal-navy-gradient-bg,
+body.home.has-scrolled header.site-header .bg {
+	background-image: linear-gradient(180deg, #201dd0 0%, #0e0f7f 18.2%, #0b0e5c 34.5%, #050a38 55.7%, #0b032e 100%);
+}
+
+.mint-gradient-bg {
+	background-image: linear-gradient(64.37deg, #00fab8 0%, #079b74 100%);
+}

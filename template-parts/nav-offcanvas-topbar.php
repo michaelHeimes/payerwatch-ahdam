@@ -32,11 +32,44 @@
 		
 			<ul class="menu">
 				<li class="logo"><a href="<?php echo home_url(); ?>">
-					<?php 
-					$image = get_field('header_logo', 'option');
-					if( !empty( $image ) ): ?>
-					    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-					<?php endif; ?>
+					<?php if( is_archive() || is_single() ):?>
+						
+						<?php 
+						$image = get_field('header_logo_white', 'option');
+						if( !empty( $image ) ): ?>
+							<img class="style-svg" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+						<?php endif; ?>		
+						
+					<?php else:?>
+					
+						<?php $logo_color = get_field('logo_color');?>		
+						
+						<?php if($logo_color == 'navy'):?>
+							<?php 
+							$image = get_field('header_logo_navy', 'option');
+							if( !empty( $image ) ): ?>
+								<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+							<?php endif; ?>							
+						<?php endif;?>
+						
+						<?php if($logo_color == 'white'):?>
+							<?php 
+							$image = get_field('header_logo_white', 'option');
+							if( !empty( $image ) ): ?>
+								<img class="style-svg" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+							<?php endif; ?>							
+						<?php endif;?>
+						
+						<?php if($logo_color == 'mint'):?>
+							<?php 
+							$image = get_field('header_logo_mint', 'option');
+							if( !empty( $image ) ): ?>
+								<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+							<?php endif; ?>							
+						<?php endif;?>				
+					
+					<?php endif;?>
+
 				</a></li>
 			</ul>
 						

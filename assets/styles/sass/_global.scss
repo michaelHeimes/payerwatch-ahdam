@@ -27,8 +27,64 @@ svg {
 	}
 }
 
-.relative {
-	position: relative;
+.wide-width {
+	width: 100%;
+	max-width: 1250px;
+	margin: auto;
+}
+
+.module {
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+	@include breakpoint (medium) {
+		padding-top: 3.5rem;
+		padding-bottom: 3.5rem;	
+	}
+	&.color-bg {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		@include breakpoint (medium) {
+			margin-top: 3.5rem;
+			margin-bottom: 3.5rem;	
+		}	
+	}
+}
+
+ul.slick-dots,
+ul.card-nav {
+	list-style: none;
+	padding: 2.15rem 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-end;
+	
+	li {
+		button {
+			font-size: 0;
+			width: 1rem;
+			height: 1rem;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+		&:before {
+			content: '';
+			width: 10px;
+			height: 10px;
+			border-radius: 100%;
+			background-color: $brand-blue;
+		}
+		
+		&[aria-selected="true"]:before {
+			background-color: $brand-mint !important;
+		}
+			
+		}
+	}
+	
 }
 
 /*********************

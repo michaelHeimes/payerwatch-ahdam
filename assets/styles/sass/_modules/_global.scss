@@ -1,0 +1,1018 @@
+/************************************************
+
+Stylesheet: Global Stylesheet
+
+*************************************************/
+/*********************
+TYPOGRAPHY
+*********************/
+h1,
+.h1 {
+	line-height: .942;
+}
+
+h2,
+.h2 {
+	line-height: 1.19;
+	margin-bottom: 0.85rem;
+}
+
+h3,
+.h3 {
+	line-height: 1.2857;
+	
+&.big-h3 {
+	font-size: rem-calc(44);
+	line-height: 1.111;
+	font-weight: bold;
+	color: $brand-violet;
+	@include breakpoint(medium) {
+		font-size: rem-calc(63);
+	}		
+}
+}
+
+.jumbo {
+	font-size: rem-calc(130);
+	line-height: 1.107;
+}
+
+p,
+.p,
+a {
+	font-size: rem-calc(14);	
+}
+
+.small-copy,
+.small-copy p,
+.small-copy a {
+	font-size: rem-calc(14);
+	line-height: 1.7142;	
+}
+
+.medium-copy,
+.medium-copy p,
+.medium-copy a,
+.entry-content ul li {
+	font-size: rem-calc(16);
+	line-height: 1.5;
+	@include breakpoint(tablet) {
+		font-size: rem-calc(20);
+	}
+}
+
+.large-copy,
+.large-copy p,
+.large-copy a,
+.large-copy li {
+	font-size: rem-calc(21);
+	line-height: 1.3333;
+	@include breakpoint(medium) {
+		font-size: rem-calc(24);
+	}
+	@include breakpoint(tablet) {
+		font-size: rem-calc(30);
+	}
+}
+
+a.view-all-link {
+	display: inline-flex;
+	align-items: center;
+	text-transform: uppercase;
+}
+
+.black {
+	color: $black !important;
+}
+
+.white {
+	color: $white !important;
+}
+
+.mint {
+	color: $brand-mint !important;
+}
+
+.navy {
+	color: $brand-navy !important;
+}
+
+.brand-blue {
+	color: $brand-blue !important;
+}
+
+.brand-royal {
+	color: $brand-royal !important;
+}
+
+.violet {
+	color: $brand-violet !important;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+.wide-width {
+	width: 100%;
+	max-width: 1250px;
+	margin: auto;
+}
+	
+.page-title {
+	
+	// Remove Foundation vcard styling from author page titles
+	.vcard {
+		border: 0px;
+		padding: 0px;
+	}
+}
+
+// Post meta  
+.byline {
+	color: #999;
+	time {}
+}
+
+// Entry content  
+.entry-content {
+	
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.alignleft, img.alignleft { 
+		margin-right: 1.5em; 
+		display: inline; 
+		float: left; 
+	}
+	.alignright, img.alignright { 
+		margin-left: 1.5em; 
+		display: inline; 
+		float: right; 
+	}
+	.aligncenter, img.aligncenter { 
+		margin-right: auto; 
+		margin-left: auto; 
+		display: block; 
+		clear: both; 
+	}
+			
+	video, object {
+		max-width: 100%;
+		height: auto;
+		}
+
+	pre {
+		background: #eee;
+		border: 1px solid #cecece;
+		padding: 10px;
+		}
+
+} 
+
+.wp-caption {
+	max-width: 100%;
+	background: #eee;
+	padding: 5px;
+
+	// Images inside wp-caption  
+	img {
+		max-width: 100%;
+		margin-bottom: 0;
+		width: 100%;
+	}
+
+	p.wp-caption-text {
+		font-size: 0.85em;
+		margin: 4px 0 7px;
+		text-align: center;
+	}
+} 
+
+.module {
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+	@include breakpoint (medium) {
+		padding-top: 3.5rem;
+		padding-bottom: 3.5rem;	
+	}
+&.color-bg {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	@include breakpoint (medium) {
+		margin-top: 3.5rem;
+		margin-bottom: 3.5rem;	
+	}	
+}
+}
+
+.form-wrap {
+	max-width: 670px;
+	p,
+	.gform_wrapper.gravity-theme .gfield_label_before_complex {
+		font-size: rem-calc(25);
+		line-height: 1;
+		font-weight: bold;
+		margin-bottom: 1.75rem;
+	}
+	.gform_wrapper.gravity-theme .gfield_label_before_complex {
+		padding-top: 0.6rem;
+	}
+}
+
+.gform_wrapper.gravity-theme {
+	label {
+		color: $white;
+		font-size: rem-calc(14);
+	}	
+	input[type=text],
+	input[type=textarea] {
+		font-size: rem-calc(14);
+		padding: 0.8rem;
+		&::placeholder {
+			font-size: rem-calc(14);
+		}	
+	}		
+
+	.gfield_checkbox {
+		margin-top: -0.85rem;
+		.gchoice {
+			position: relative;
+			margin-bottom: 0.3rem;
+		}
+		input {
+			margin-right: .4rem;
+			opacity: 0;
+			&:checked {
+				+ label:before {
+					background-color: $brand-mint;
+				}
+			}
+		}
+		label {
+			position: relative;
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+			    top: 3px;
+			    left: -31px;
+				width: 20px;
+				height: 20px;
+				border: 1px solid $brand-mint;
+			}
+		}
+	}
+	.gform_footer {
+		margin-top: 1rem;
+	}
+}
+
+.gform_wrapper.gravity-theme .gfield select {
+	background-color: $brand-navy;
+	color: $white;
+	background-size: 16px;
+	background-position: 100% 50%;
+	background-repeat: no-repeat;						
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9.965' height='5.888' viewBox='0 0 9.965 5.888'%3E%3Cpath id='Path_9856' data-name='Path 9856' d='M4.982,0,4.077.906,7.506,4.335l.619.647h0l-.619.647L4.077,9.059l.906.906L9.965,4.982Z' transform='translate(9.965 -4.077) rotate(90)' fill='%23fff'/%3E%3C/svg%3E%0A");
+	
+	
+	&::placeholder {
+		color: $white;
+	}
+}
+
+@media (max-width: 640px) {
+	.gform_wrapper.gravity-theme .ginput_complex span {
+		&:not(:last-child) {
+	    	margin-bottom: 1rem;
+	    }
+	    &:last-child {
+		    margin-bottom: 0;
+	    }
+	}
+}
+	
+@media (min-width: 641px) {
+	.gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) fieldset:not([style*="display:none"]):not(.ginput_full), .gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) span:not([style*="display:none"]):not(.ginput_full) {
+	    padding-right: 11px;
+	}
+}
+
+
+.archive-tag {
+	font-size: rem-calc(14);
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+button:not(.large):not([role="tab"]):not(.team-dot),
+.button:not(.large):not([role="tab"]):not(.team-dot) {
+
+	
+}
+
+.g-pipe {
+	padding-top: 1.6rem;
+    padding-bottom: 2.9rem;
+    
+	span {
+		display: block;
+		width: 100%;
+		height: 7px;
+	}
+}
+
+.fh {
+	height: 100%;
+}
+
+.relative {
+	position: relative;
+}
+
+.has-bg {
+	position: relative;
+	overflow: hidden;
+}
+
+.bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-size: cover;
+	background-position: center center;
+	
+&.banner-bg-skew {
+	transform: skew($skew) translateX(0);
+}
+	
+}
+
+.bg.pull-left {
+	width: 128%;
+    left: -28%;
+}
+
+.bg.pull-right {
+	width: 128%;
+	left: auto;
+    right: -28%;
+}
+
+.white-bg {
+	background-color: $white;
+}
+
+.sky-blue-bg {
+	background-color: $brand-sky-blue;
+}
+
+.royal-blue-bg,
+.blue-bg,
+.navy-bg,
+.violet-bg {
+	color: $white;
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $white;
+	}	
+		
+}
+
+.royal-blue-bg,
+.blue-bg,
+.transparent-bg,
+.violet-bg,
+.mint-bg {
+	.gform_wrapper.gravity-theme {
+		[type=color], [type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], textarea, select {
+			background-color: $white;
+			color: $brand-blue;
+			&::placeholder {
+				color: $brand-blue;
+			}
+		}
+		.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn)[type=submit] {
+			background-color: $white;
+		}
+	}
+}
+
+.royal-blue-bg {
+	background-color: $brand-royal;
+}
+
+.blue-bg {
+	background-color: $brand-blue;
+}
+
+.navy-bg {
+	background-color: $brand-navy;
+}
+
+.violet-bg {
+	background-color: $brand-violet;
+}
+
+.mint-bg {
+	background-color: $brand-mint;
+}
+
+
+
+.royal-navy-gradient-bg,
+body.home.has-scrolled header.site-header .bg {
+	background-image: linear-gradient(180deg, #201dd0 0%, #0e0f7f 18.2%, #0b0e5c 34.5%, #050a38 55.7%, #0b032e 100%);
+}
+
+.mint-gradient-bg {
+	background-image: linear-gradient(64.37deg, #00fab8 0%, #079b74 100%);
+}
+
+button.close-button {
+	margin-bottom: 1.5rem;
+}
+
+a.wp-block-button__link,
+button, 
+a.button,
+.gform_button {
+	&:not([role="tab"]):not(.close-button):not(.enlarge-btn) {
+		line-height: 1;
+		padding: 1em 2.7223em;
+		border-radius: 0;
+		letter-spacing: .05px;
+		text-transform: uppercase;
+		font-weight: bold;
+		border: 2px solid $brand-navy;
+		transition: all .25s ease;
+		
+		&:hover {
+			color: $brand-royal;
+			border-color: $brand-royal;
+		}
+		
+		&.post-btn,
+		&[type="submit"] {
+			width: 100%;
+			font-size: rem-calc(24);
+			line-height: 1;
+			color: $brand-navy;
+			background-color: $brand-mint;
+			border-color: $brand-mint;
+			&:hover {
+				background-color: #00E37B;
+			}
+		}
+	
+		&.mint-bg {
+			border-color: $brand-mint;
+			background-color: $brand-mint;
+			color: $brand-navy;
+			
+		&:hover {
+			border-color: $brand-mint-hover;
+			background-color: $brand-mint-hover;
+		}
+		
+		}
+
+		&.royal-bg {
+			border-color: $brand-royal;
+			background-color: $brand-royal;
+			color: $white;
+			
+		&:hover {
+			border-color: #051498;
+			background-color: #051498;
+		}
+		
+		}
+		
+		&.large {
+			display: inline-flex;
+			padding: 0;
+			overflow: hidden;
+			font-weight: 600;
+			color: $white;
+			text-transform: none;
+			border: 0;
+			position: relative;
+		
+			span {
+				position: relative;		
+				&.gradient {
+					display: block;
+					padding: 1.375rem 4.05rem 1.375rem 1.8312rem;
+					background-image: linear-gradient(-90deg, rgba(27,17,149,1) 0%, rgba(48,36,221,1) 100%);
+					
+					&:before {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						width: 100%;
+						opacity: 1;
+						background-image: linear-gradient(90deg, rgba(27,17,149,1) 0%, rgba(48,36,221,1) 100%);
+						transition: all 1s ease;
+					}			
+				}
+				
+				&.arrow {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: absolute;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					padding: .594rem;
+					transition: background-color .3s ease;
+				}
+				
+				&.text {
+					position: relative;
+					z-index: 1;
+				}
+				
+			}
+			
+			&:hover {
+				span.gradient:before {
+					opacity: 0;
+				}
+				.arrow {
+					background-color: $brand-mint-hover;
+				}
+			}
+	
+		}
+	}
+}
+
+.vm-link,
+a.vm-link {
+	display: inline-flex;
+	color: $brand-navy;
+	span {
+		display: inline-block;
+		margin-right: 2.625rem;
+		font-size: rem-calc(12);
+		font-weight: bold;
+		letter-spacing: .5px;
+		text-transform: uppercase;
+	}
+	svg {
+		transition: transform .3s ease;	
+	}
+&:hover {
+	svg {
+		transform: translateX(1rem);
+	}
+}
+}
+
+.wp-block-button {
+	width: 100%;
+}
+
+a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn) {
+	background-color: $brand-mint;
+	color: $brand-navy;
+	width: 100%;
+	font-size: rem-calc(24);
+	line-height: 1;
+	color: $brand-navy;
+	border-color: $brand-mint;
+	
+&:hover {
+	border-color: $brand-mint-hover;
+	background-color: $brand-mint-hover;
+	color: $brand-navy;
+}
+
+}
+
+button.large,
+a.button.large {
+	
+}
+
+ul.slick-dots,
+ul.card-nav {
+	list-style: none;
+	padding: 2.15rem 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-end;
+	
+	li {
+		button {
+			font-size: 0;
+			width: 1rem;
+			height: 1rem;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+		&:before {
+			content: '';
+			width: 10px;
+			height: 10px;
+			border-radius: 100%;
+			background-color: $brand-blue;
+		}
+		
+		&[aria-selected="true"]:before {
+			background-color: $brand-mint !important;
+		}
+			
+		}
+	}
+	
+}
+
+
+// Add Foundation styling to password protect button
+.post-password-form input[type="submit"] {
+	@include button;
+}
+
+/*********************
+IMAGE GALLERY STYLES
+*********************/
+.gallery {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-right: -15px;
+	margin-left: -15px; 
+}
+.gallery::before, .gallery::after {
+	content: ' ';
+	display: table; 
+}
+.gallery::after {
+	clear: both; 
+}
+.gallery.gallery-columns-1 > dl {
+	@include grid-column;
+}
+.gallery.gallery-columns-2 > dl {
+	@include grid-column(1 of 2);
+}
+.gallery.gallery-columns-3 > dl {
+	@include grid-column(1 of 3);
+}
+.gallery.gallery-columns-4 > dl {
+	@include grid-column(1 of 4);
+}
+.gallery.gallery-columns-5 > dl {
+	@include grid-column(1 of 5);
+}
+.gallery.gallery-columns-6 > dl {
+	@include grid-column(1 of 6);
+}
+.gallery.gallery-columns-7 > dl {
+	@include grid-column(1 of 7);
+}
+.gallery.gallery-columns-8 > dl {
+	@include grid-column(1 of 8);
+}
+.gallery dl {
+	width: 100%;
+	float: left;
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem; 
+}
+.gallery dl:last-child:not(:first-child) {
+  float: right; 
+ }
+
+// Gallery caption styles
+.gallery-caption {}
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
+
+/*********************
+PAGE NAVI STYLES
+*********************/
+.page-navigation {
+	margin-top: 1rem;
+}
+
+/*********************
+COMMENT STYLES
+*********************/
+#comments {
+	.commentlist {
+		margin-left: 0px;
+	}
+}
+
+#respond {
+	ul {
+		margin-left: 0px;
+	}
+}
+
+.commentlist {
+	li {
+		position: relative;
+		clear: both;
+		overflow: hidden;
+		list-style-type: none;
+		margin-bottom: 1.5em;
+		padding: 0.7335em 10px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		ul.children {
+			margin: 0;
+
+			li {}
+
+			.comment {}
+			.alt {}
+			.odd {}
+			.even {}
+			.depth-1 {}           // Change number for different depth  
+			.byuser {}
+			.bypostauthor {}
+			.comment-author-admin {}
+
+		}
+	}
+
+	li[class*=depth-] {
+		margin-top: 1.1em;
+	}
+
+	li.depth-1 {
+		margin-left: 0;
+		margin-top: 0;
+	}
+
+	li:not(.depth-1) {
+		margin-left: 10px;
+		margin-top: 0;
+		padding-bottom: 0;
+	}
+
+	li.depth-2 {}
+	li.depth-3 {
+	}
+	li.depth-4 {}
+	li.depth-5 {}
+
+	// General comment classes  
+	.alt {}
+	.odd {
+	}
+	.even {
+	}
+	.parent {}
+	.comment {}
+	.children {}
+	.pingback {}
+	.bypostauthor {}
+	.comment-author {}
+	.comment-author-admin {}
+	.thread-alt {}
+	.thread-odd {}
+	.thread-even {}
+
+	// vcard  
+	.vcard {
+		margin-left: 50px;
+
+		cite.fn {
+			font-weight: 700;
+			font-style: normal;
+
+			a.url {}
+
+		}
+
+		time {
+			float: right;
+
+			a {
+				color: #999;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+
+			}
+
+		}
+
+		img.photo {}
+
+		img.avatar {
+			position: absolute;
+			left: 10px;
+			padding: 2px;
+			border: 1px solid #cecece;
+			background: #fff;
+		}
+
+	} // end .commentlist .vcard  
+
+
+	// comment meta  
+	.comment-meta {
+
+		a {}
+
+	}
+
+	.commentmetadata {
+
+		a {}
+
+	}
+
+	// comment content  
+	.comment_content {
+
+		p {
+			margin: 0.7335em 0 1.5em;
+			font-size: 1em;
+			line-height: 1.5em;
+		}
+
+	} // end .commentlist .comment_content  
+
+	// comment reply link  
+	.comment-reply-link {
+		float: right;
+
+		&:hover,
+		&:focus {
+		
+		}
+
+	} // end .commentlist .comment-reply-link  
+
+} // end .commentlist  
+
+/*********************
+COMMENT FORM STYLES
+*********************/
+.respond-form {
+	margin: 1.5em 10px;
+	padding-bottom: 2.2em;
+
+	form {
+		margin: 0.75em 0;
+
+		li {
+			list-style-type: none;
+			clear: both;
+			margin-bottom: 0.7335em;
+
+			label,
+			small {
+				display: none;
+			}
+		}
+
+		input[type=text],
+		input[type=email],
+		input[type=url],
+		textarea {
+			padding: 3px 6px;
+			background: #efefef;
+			border: 2px solid #cecece;
+			line-height: 1.5em;
+
+			&:focus {
+				background: #fff;
+			}
+
+			// form validation  
+			&:invalid {
+				outline: none;
+				border-color: #fbc2c4;
+				background-color: #f6e7eb;
+				-webkit-box-shadow: none;
+				   -moz-box-shadow: none;
+				    -ms-box-shadow: none;
+						box-shadow: none;
+			}
+		}
+
+		input[type=text],
+		input[type=email],
+		input[type=url] {
+			max-width: 400px;
+			min-width: 250px;
+		}
+
+		textarea {
+			resize: none;
+			width: 97.3%;
+			height: 150px;
+		}
+
+	}
+}
+
+// comment form title  
+#comment-form-title {
+	margin: 0 0 1.1em;
+}
+
+// cancel comment reply link  
+#cancel-comment-reply {
+	a {}
+}
+
+// logged in comments  
+.comments-logged-in-as {}
+
+// allowed tags  
+#allowed_tags {
+	margin: 1.5em 10px 0.7335em 0;
+}
+
+// No comments  
+.nocomments {
+	margin: 0 20px 1.1em;
+}
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.sidebar {
+	li{
+		list-style: none;
+	}
+}
+
+.widget {
+	ul {
+		margin: 0;
+	}
+}
+/*********************
+FOOTER STYLES
+*********************/
+.footer {
+	clear: both;
+}
+	
+/*********************
+VISUAL EDITOR STYLES
+*********************/
+// Makes content look better in visual editor
+body#tinymce {
+   	margin: 20px;
+}
+
+/*********************
+PLUGIN STYLES
+*********************/
+// Makes Gravity Forms play nice with Foundation Form styles
+.gform_body ul {
+    list-style: none outside none;
+    margin: 0;
+}
+
+// Hide Gravity Forms validation fields when GFCSS is disabled
+.gform_validation_container,
+.gform_wrapper .gform_validation_container,
+body .gform_wrapper li.gform_validation_container,
+body .gform_wrapper .gform_body ul.gform_fields li.gfield.gform_validation_container,
+body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
+    display: none !important;
+    position: absolute !important;
+    left: -9000px;
+}

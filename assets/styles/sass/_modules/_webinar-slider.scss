@@ -1,0 +1,53 @@
+.slider-module {
+	h2.h3 {
+		margin-bottom: 3.25rem;
+	}
+}
+
+.post-slider {
+	max-width: 542px;
+	margin: auto;
+		
+	.slick-track {
+	    display: flex !important;
+	}
+	
+	.slick-slide {
+	    height: inherit !important;
+	}
+	
+	.slick-list {
+		overflow: visible;
+	}
+	article {
+		max-width: 542px;
+		margin: 3px;
+		h2 {
+			font-size: rem-calc(30);
+		}
+		a {
+			width: 100%;
+		}
+		.inner footer.article-footer {
+			padding-top: 1rem;
+		}
+	}
+	.dots-and-all {
+		ul {
+			padding-bottom: 1rem;
+			flex: 0 0 auto;
+		    min-height: 0;
+		    min-width: 0;
+		    width: 100%;
+		}
+	}
+}
+
+.slider-nav {
+	ul.slick-dots {
+		padding-bottom: .5rem;
+	}
+	@include breakpoint(medium) {
+		padding-top: 0.6rem;
+	}
+}

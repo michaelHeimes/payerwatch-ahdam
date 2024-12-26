@@ -1,0 +1,26 @@
+.two-news-posts {
+	
+	article {
+		margin-bottom: 1.75rem;
+		.inner {
+			
+			header.article-header {
+				padding-bottom: 0;
+			}
+			
+			a {
+				justify-content: space-between;
+			}
+			
+			.archive-tag {
+			    padding-bottom: 2.1rem;
+			}
+			
+			.entry-content {
+			    padding-bottom: 2.1rem;
+			}
+			
+		}
+	}
+	
+}

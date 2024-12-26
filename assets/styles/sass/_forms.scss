@@ -1,0 +1,93 @@
+.form-wrap {
+	max-width: 670px;
+	p,
+	p a,
+	.gform_wrapper.gravity-theme .gfield_label_before_complex {
+		font-size: rem-calc(25);
+		line-height: 1;
+		font-weight: bold;
+		margin-bottom: 1.75rem;
+	}
+	.gform_wrapper.gravity-theme .gfield_label_before_complex {
+		padding-top: 0.6rem;
+	}
+}
+
+.gform_wrapper.gravity-theme {
+	label {
+		color: $white;
+		font-size: rem-calc(14);
+	}	
+	input[type=text],
+	input[type=textarea] {
+		font-size: rem-calc(14);
+		padding: 0.8rem;
+		&::placeholder {
+			font-size: rem-calc(14);
+		}	
+	}		
+
+	.gfield_checkbox {
+		margin-top: -0.85rem;
+		.gchoice {
+			position: relative;
+			margin-bottom: 0.3rem;
+		}
+		input {
+			margin-right: .4rem;
+			opacity: 0;
+			&:checked {
+				+ label:before {
+					background-color: $brand-mint;
+				}
+			}
+		}
+		label {
+			position: relative;
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 3px;
+				left: -31px;
+				width: 20px;
+				height: 20px;
+				border: 1px solid $brand-mint;
+			}
+		}
+	}
+	.gform_footer {
+		margin-top: 1rem;
+	}
+}
+
+.gform_wrapper.gravity-theme .gfield select {
+	background-color: $brand-navy;
+	color: $white;
+	background-size: 16px;
+	background-position: 100% 50%;
+	background-repeat: no-repeat;						
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9.965' height='5.888' viewBox='0 0 9.965 5.888'%3E%3Cpath id='Path_9856' data-name='Path 9856' d='M4.982,0,4.077.906,7.506,4.335l.619.647h0l-.619.647L4.077,9.059l.906.906L9.965,4.982Z' transform='translate(9.965 -4.077) rotate(90)' fill='%23fff'/%3E%3C/svg%3E%0A");
+	
+	
+	&::placeholder {
+		color: $white;
+	}
+}
+
+@media (max-width: 640px) {
+	.gform_wrapper.gravity-theme .ginput_complex span {
+		&:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+	
+@media (min-width: 641px) {
+	.gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) fieldset:not([style*="display:none"]):not(.ginput_full), .gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) span:not([style*="display:none"]):not(.ginput_full) {
+		padding-right: 11px;
+	}
+}

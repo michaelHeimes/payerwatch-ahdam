@@ -1,0 +1,196 @@
+.team-preview {
+	//height: 600px;
+	position: relative;
+	
+	.link-wrap {
+		padding-top: 2.55rem;
+	}
+	
+	.inner {
+		position: relative;
+		
+		@include breakpoint(medium down) {
+			padding-top: 3rem;
+		}
+		
+		@include breakpoint(large) {
+			margin-right: -.875rem;
+		}
+		
+/*
+		@include breakpoint(medium) {
+			margin-right: 2.25rem;
+		}
+		
+		@include breakpoint(large) {
+			margin-right: 124px;
+		}
+*/
+	
+		.single-card {
+			position: absolute;
+			width: 100%;
+			max-width: 280px;
+			top: 50%;
+			left: 50%;
+			right: 0;
+			z-index: 1;
+			padding: 1.3rem 2rem 6.1rem 2rem;
+			border-radius: 4px;
+			background-color: $brand-sky-blue;
+			transition: all 1s ease;
+			
+			@include breakpoint(large) {
+				max-width: 329px;
+				padding: 4.9rem 3rem 8.5rem 3rem;
+			}
+			
+		&[data-order="1"] {
+			position: relative;
+			z-index: 3;
+			transform: translate( -100%, 0) scale(1);
+		}
+		
+		&[data-order="2"],
+		&[data-order="3"] {
+			opacity: 1;
+			transform: translate(-100%, -50%) scale(.7);
+			
+			@include breakpoint(large) {
+				transform: translate(-100%, -50%) scale(.7);
+			}
+			
+			
+		}
+
+		&[data-order="2"] {
+			z-index: 2;
+		}
+		
+		&[data-order="3"] {
+			z-index: 1;
+		}
+		
+			.photo-wrap {
+				opacity: .2;
+				width: 80px;
+				height: 80px;
+				border-radius: 100%;
+				overflow: hidden;
+				margin: auto;
+				margin-bottom: 1rem;
+			}
+			
+			.mint {
+				filter: grayscale(1);
+			}
+			
+			h4 {
+				text-transform: uppercase;
+				font-size: rem-calc(20);
+				font-weight: bold;
+				letter-spacing: 2px;
+				line-height: 1.25;
+				margin-bottom: 1.3em;	
+			}
+			
+			.copy-wrap {
+				color: rgba(18,5,143, .23);
+				padding-top: 1.25rem;
+				
+				ul {
+					padding-top: .5em;
+					
+					li {
+						padding-bottom: 0.25em;
+					}
+					
+				}
+			}
+			
+			.name-title,
+			a {
+				font-weight: bold;
+				font-size: rem-calc(14);
+				line-height: 1.214;
+			}
+			
+			a {
+				display: inline-flex;
+				color: $brand-mint;
+				letter-spacing: .5px;
+				span {
+					display: inline-block;
+					margin-right: 1.0625rem;
+				}
+			}
+			
+			.link-wrap {
+				position: absolute;
+				bottom: 1.7rem;
+				right: 2rem;
+				//padding-top: 5.25rem;
+			}
+
+		}
+		
+	}
+	
+	ul.card-nav {
+		position: relative;
+		z-index: 2;
+		padding: 0;
+		margin-top: 1rem;
+		@include breakpoint(medium) {
+			margin-top: -13px;
+		}
+	}
+	
+&.active {
+	
+	.inner {
+		
+		.single-card {
+	
+		&[data-order="1"] {
+			background-color: $brand-blue;			
+			z-index: 3;
+			transform: translate(-50%, 0) scale(1);
+			
+			@include breakpoint(large) {
+				transform: translate(-50%, 0) scale(1);
+			}
+			
+			.copy-wrap {
+				color: $white;
+			}
+			
+		}
+
+		&[data-order="2"] {
+			z-index: 2;
+			transform: translate(5%, -50%) scale(.7);
+			
+			@include breakpoint(large) {
+				transform: translate(5%, -50%)  scale(.7);
+			}
+			
+		}
+		
+		&[data-order="3"] {
+			z-index: 1;
+			transform: translate(-105%, -50%)  scale(.7);
+			
+			@include breakpoint(large) {
+				transform: translate(-105%, -50%)  scale(.7);
+			}
+			
+		}
+
+		}
+		
+	}
+	
+}
+	
+}	
