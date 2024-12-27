@@ -82,6 +82,7 @@
 			width: 100%;
 			margin-left: -50px;
 			bottom: 22px;
+			transform: translateX(-70px);
 			
 			@include breakpoint(tablet) {
 				margin-left: 0;
@@ -93,6 +94,10 @@
 		.img-wrap {
 			width: 560px;
 		    max-width: 100%;
+			img {
+				opacity: 0;
+				transform: translateX(-70px);
+			}
 		}
 	}
 	

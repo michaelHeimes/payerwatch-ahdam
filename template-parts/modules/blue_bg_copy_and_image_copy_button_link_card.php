@@ -1,36 +1,50 @@
+<?php
+if(!defined('ABSPATH')) {
+	exit;
+}
+$size = 'full';
+$left_card = get_sub_field('left_card') ?? null;
+$left_card_header = $left_card['heading'] ?? null;
+$left_card_copy = $left_card['copy'] ?? null;
+$right_card = get_sub_field('right_card') ?? null;
+$image = $right_card['image'] ?? null;
+$copy = $right_card['copy'] ?? null;
+$link = $right_card['button_link'] ?? null;
+?>
 <section class="blue-bg-image-copy-button-cards module">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			
-			<?php if( have_rows('left_card') ):?>
-				<?php while ( have_rows('left_card') ) : the_row();?>	
+			<?php if( $left_card ):	?>	
 				<div class="left relative cell small-12 medium-6">
 					<div class="bg royal-blue-bg pull-left"></div>
-					<h2 class="white relative"><?php the_sub_field('heading');?></h2>
+					<?php if( !empty( $left_card_header ) ):?>
+						<h2 class="white relative"><?=esc_html($left_card_header);?></h2>
+					<?php endif;?>
 					<div class="g-pipe relative">
 						<span></span>
 					</div>
-					<div class="copy-wrap white relative"><?php the_sub_field('copy');?></div>	
+					<div class="copy-wrap white relative"><?=wp_kses_post($left_card_copy);?></div>	
 				</div>
-				<?php endwhile;?>
 			<?php endif;?>
 
-			<?php if( have_rows('right_card') ):?>
-				<?php while ( have_rows('right_card') ) : the_row();?>	
+			<?php if( $right_card ):?>
 				<div class="left cell small-12 medium-6">
 					<?php 
-					$image = get_sub_field('image');
 					if( !empty( $image ) ): ?>
 					<div class="img-wrap">
-					    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+					    <?=wp_get_attachment_image( $image['id'], $size );?>
 					</div>
 					<?php endif; ?>
-					<h2 class="h3"><?php the_sub_field('wysiwyg_editor');?></h2>
+					<?php if( !empty( $copy ) ):?>
+						<h2 class="h3">
+							<?=wp_kses_post($copy);?>
+						</h2>
+					<?php endif;?>
 					<div class="copy-wrap medium-copy">
 						<?php the_sub_field('copy');?>
 					</div>		
 					<?php 
-					$link = get_sub_field('button_link');
 					if( $link ): 
 					    $link_url = $link['url'];
 					    $link_title = $link['title'];
@@ -41,7 +55,6 @@
 					</div>
 					<?php endif; ?>
 				</div>
-				<?php endwhile;?>
 			<?php endif;?>
 					
 		</div>

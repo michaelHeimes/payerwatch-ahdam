@@ -1,40 +1,40 @@
-<?php
+<?php 
 /**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package trailhead
+ * The template for displaying all single posts and attachments
  */
 
-get_header();
-?>
+get_header(); ?>
+			
+<div class="content">
+	<?php get_template_part('template-parts/content', 'post-banner');?>
+	<div class="content-light-blue-bg">
+		<div class="grid-container">
+			<div class="inner-content grid-x grid-padding-x">
+		
+				<main class="main small-12 medium-8 large-8 large-offset-1 cell" role="main">
+				
+				    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				
+				    	<?php get_template_part( 'template-parts/loop', 'single' ); ?>
+				    	
+				    <?php endwhile; else : ?>
+				
+				   		<?php get_template_part( 'template-parts/content', 'missing' ); ?>
+		
+				    <?php endif; ?>
+		
+				</main> <!-- end #main -->
+				
+			</div> <!-- end #inner-content -->
+		</div>
+	</div>
+			
+	<?php get_template_part('template-parts/modules/two_news_posts');?>
 
-	<main id="primary" class="site-main">
+	<?php get_template_part('template-parts/modules/trusted_partners');?>
+	
+	<?php get_template_part('template-parts/modules/blue_background_cta');?>
+			
+</div> <!-- end #content -->
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
-
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'trailhead' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'trailhead' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
-
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>

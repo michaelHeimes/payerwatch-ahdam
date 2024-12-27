@@ -2,7 +2,7 @@
 /**
  * The template part for displaying a grid of posts
  *
- * For more info: https://jointswp.com/docs/grid-archive/
+ * For more info: http://jointswp.com/docs/grid-archive/
  */
 
 // Adjust the amount of rows in the grid
@@ -29,7 +29,7 @@ $grid_columns = 4; ?>
 				</header> <!-- end article header -->	
 								
 				<section class="entry-content" itemprop="text">
-					<?php the_content('<button class="tiny">' . __( 'Read more...', 'trailhead' ) . '</button>'); ?> 
+					<?php the_content('<button class="tiny">' . __( 'Read more...', 'jointswp' ) . '</button>'); ?> 
 				</section> <!-- end article section -->
 								    							
 			</article> <!-- end article -->

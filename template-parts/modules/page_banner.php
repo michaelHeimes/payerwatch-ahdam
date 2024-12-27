@@ -1,8 +1,18 @@
+<?php
+if(!defined('ABSPATH')) {
+	exit;
+}
+$size = 'full';
+$heading = get_sub_field('heading') ?? null;
+$large_text = get_sub_field('large_text') ?? null;
+$text = get_sub_field('text') ?? null;
+$link = get_sub_field('link') ?? null;
+?>
 <div class="banner page-banner has-bg grid-x align-bottom">
 	<div class="banner-img bg has-bg">
 		<?php if(is_archive()):?>
 		
-			<?php get_template_part('parts/content', 'post-banner-bg-img');?>
+			<?php get_template_part('template-parts/content', 'post-banner-bg-img');?>
 				
 		<?php else:?>
 		
@@ -24,11 +34,22 @@
 							<h1 class="page-title white"><?php post_type_archive_title();?></h1>
 						<?php endif;?>
 					<?php else:?>
-						<h1 class="white"><?php the_sub_field('heading');?></h1>
-						<p class="large-copy"><?php the_sub_field('large_text');?></p>
-						<p class="medium-copy"><?php the_sub_field('text');?></p>
+						<?php if( !empty($heading) ):?>
+							<h1 class="white">
+								<?=esc_html($heading);?>
+							</h1>
+						<?php endif;?>
+						<?php if( !empty($large_text) ):?>
+							<p class="large-copy">
+								<?=wp_kses_post($large_text);?>
+							</p>
+						<?php endif;?>
+						<?php if( !empty($text) ):?>
+							<p class="medium-copy">
+								<?=esc_html($text);?>
+							</p>
+						<?php endif;?>
 						<?php 
-						$link = get_sub_field('button_link');
 						if( $link ): 
 						    $link_url = $link['url'];
 						    $link_title = $link['title'];
@@ -58,7 +79,7 @@
 					$image = get_sub_field('image');
 					if( !empty( $image ) ): ?>
 					<div class="fh img-wrap grid-x grid-padding-x align-middle">
-					    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+						<?=wp_get_attachment_image( $image['id'], $size );?>
 					</div>
 					<?php endif; ?>
 					<div class="accent"></div>

@@ -7,6 +7,9 @@
 		line-height: 1;
 		font-weight: bold;
 		margin-bottom: 1.75rem;
+		a {
+			text-decoration: underline;
+		}
 	}
 	.gform_wrapper.gravity-theme .gfield_label_before_complex {
 		padding-top: 0.6rem;

@@ -1,13 +1,29 @@
+<?php
+if(!defined('ABSPATH')) {
+	exit;
+}
+$size = 'full';
+$heading = get_sub_field('heading') ?? null;
+$large_text = get_sub_field('large_text') ?? null;
+$text = get_sub_field('text') ?? null;
+$link = get_sub_field('button_link') ?? null;
+$image = get_sub_field('image') ?? null;
+?>
 <section class="banner home-banner royal-navy-gradient-bg" data-equalizer-watch="header-gradient">
 	<div class="inner wide-width">
 		<div class="grid-container fluid">
 			<div class="grid-x grid-padding-x">
 				<div class="left cell small-12 medium-6 white">
-					<h1 class="white"><?php the_sub_field('heading');?></h1>
-					<p class="large-copy"><?php the_sub_field('large_text');?></p>
-					<p class="medium-copy"><?php the_sub_field('text');?></p>
+					<?php if( !empty( $heading ) ):?>
+						<h1 class="white"><?=esc_html($heading);?></h1>
+					<?php endif;?>
+					<?php if( !empty( $large_text ) ):?>
+						<p class="large-copy"><?=esc_html($large_text);?></p>
+					<?php endif;?>
+					<?php if( !empty( $text ) ):?>
+						<p class="medium-copy"><?=wp_kses_post($text);?></p>
+					<?php endif;?>
 					<?php 
-					$link = get_sub_field('button_link');
 					if( $link ): 
 					    $link_url = $link['url'];
 					    $link_title = $link['title'];
@@ -32,11 +48,10 @@
 				</div>
 				<div class="right cell small-12 medium-6 large-5 large-offset-1">
 					<?php 
-					$image = get_sub_field('image');
 					if( !empty( $image ) ): ?>
 					<div class="img-wrap has-bfg">
 						<span class="bg"></span>
-					    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+						<?=wp_get_attachment_image( $image['id'], $size );?>
 					</div>
 					<?php endif; ?>
 					<div class="accent"></div>

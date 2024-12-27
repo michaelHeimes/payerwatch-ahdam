@@ -59,7 +59,7 @@
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.orbit.js
 
 // Modals
-//@*prepros-prepend vendor/foundation/js/plugins/foundation.reveal.js
+//@prepros-prepend vendor/foundation/js/plugins/foundation.reveal.js
 
 // Form UI element
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.slider.js
@@ -201,9 +201,7 @@
                     window.addEventListener('resize', updateMinHeight);
                 }
                 
-            }
-            
-            console.log(firstElement);
+            }            
             
             gsap.to( '.banner.home-banner .right span', {
                 y: -18,
@@ -262,11 +260,11 @@
                 .from(bigBtn, {
                     x: -70, opacity:0, ease:"power2.inOut", duration:.5
                 }, .2)
-                .from(themeBg, {
-                    x: -70, ease:"power2.inOut", duration:.5
+                .to(themeBg, {
+                    x: 0, ease:"power2.inOut", duration:.5
                 }, .4)
-                .from(bannerImg, {
-                    x: -70, opacity:0, ease:"power2.inOut", duration: 1
+                .to(bannerImg, {
+                    x: 0, opacity: 1, ease:"power2.inOut", duration: 1
                 }, .5)
             });
         }

@@ -55,12 +55,24 @@ add_filter('admin_footer_text', 'trailhead_custom_admin_footer');
 		// Define the style_formats array
 		$style_formats = array(  
 			// Each array child is a format with it's own settings
-	        array(  
-	            'title' => 'Large Blue Text',  
-	            'block' => 'span',  
-	            'classes' => 'large-blue-text',
-	            'wrapper' => true,
-	        ),
+			array(  
+				'title' => 'Medium Text',  
+				'block' => 'span',  
+				'classes' => 'medium-copy',
+				'wrapper' => true,
+			),
+			array(  
+				'title' => 'Large Text',  
+				'block' => 'span',  
+				'classes' => 'large-copy',
+				'wrapper' => true,
+			),
+			array(  
+				'title' => 'Button',  
+				'selector' => 'a',  
+				'classes' => 'button mint-bg post-btn',
+				'wrapper' => false,
+			),
 		);
 		// Insert the array, JSON ENCODED, into 'style_formats'
 		$init_array['style_formats'] = json_encode( $style_formats );  
@@ -68,7 +80,6 @@ add_filter('admin_footer_text', 'trailhead_custom_admin_footer');
 		return $init_array;  
 	} 
 	add_filter( 'tiny_mce_before_init', 'add_styleselect_classes' ); 
-
 
 	// add editor-style.css
 	function theme_editor_style() {

@@ -1,4 +1,8 @@
-<?php if ( have_rows('modules') ) : ?>
+<?php 
+if(!defined('ABSPATH')) {
+	exit;
+}
+	if ( have_rows('modules') ) : ?>
 <?php while ( have_rows('modules') ) : ?> 
 	<?php the_row(); ?>
 

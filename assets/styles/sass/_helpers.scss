@@ -14,6 +14,9 @@ a.view-all-link {
 
 .white {
 	color: $white !important;
+	p a {
+		color: $white !important;
+	}
 }
 
 .mint {

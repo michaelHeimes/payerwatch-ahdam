@@ -40,9 +40,14 @@ article.event-card {
 		padding-top: 1.05rem;
 	}
 	
-	a:hover {
+	a {
 		svg {
-			transform: translateX(1rem);			
+			transition: transform .25s ease;
+		}
+		&:hover {
+			svg {
+				transform: translateX(1rem);			
+			}
 		}
 	}
 	

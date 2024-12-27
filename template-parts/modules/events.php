@@ -1,12 +1,17 @@
+<?php
+if(!defined('ABSPATH')) {
+	exit;
+}
+$heading = get_sub_field('heading') ?? null;
+?>
 <section class="events module sky-blue-bg">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			
-			<?php $heading = get_sub_field('heading');
-				if($heading):?>
-			<div class="cell small-12 large-10 large-offset-1">
-				<h2 class="brand-royal h3 big-h3"><?php the_sub_field('heading');?></h2>
-			</div>
+			<?php if( !empty( $heading ) ):?>
+				<div class="cell small-12 large-10 large-offset-1">
+					<h2 class="brand-royal h3 big-h3"><?php the_sub_field('heading');?></h2>
+				</div>
 			<?php endif;?>
 			
 			<div class="cell small-12 large-10 large-offset-1">
