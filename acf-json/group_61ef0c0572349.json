@@ -1917,7 +1917,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "This module is edited in Theme Options",
+                            "message": "This module is edited in <a href=\"\/wp-admin\/admin.php?page=theme-options\"><u>Theme Settings<\/u><\/a>",
                             "new_lines": "wpautop",
                             "esc_html": 0
                         }
@@ -1945,7 +1945,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "This module is edited in Theme Options",
+                            "message": "This module is edited in <a href=\"\/wp-admin\/admin.php?page=theme-options\"><u>Theme Settings<\/u><\/a>",
                             "new_lines": "wpautop",
                             "esc_html": 0
                         }
@@ -2378,12 +2378,11 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "50",
+                                        "width": "33",
                                         "class": "",
                                         "id": ""
                                     },
                                     "return_format": "array",
-                                    "preview_size": "medium",
                                     "library": "all",
                                     "min_width": "",
                                     "min_height": "",
@@ -2392,6 +2391,7 @@
                                     "max_height": "",
                                     "max_size": "",
                                     "mime_types": "",
+                                    "preview_size": "thumbnail",
                                     "parent_repeater": "field_63e52f2687631"
                                 },
                                 {
@@ -2404,15 +2404,15 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "50",
+                                        "width": "33",
                                         "class": "",
                                         "id": ""
                                     },
                                     "default_value": "",
+                                    "maxlength": "",
                                     "placeholder": "",
                                     "prepend": "",
                                     "append": "",
-                                    "maxlength": "",
                                     "parent_repeater": "field_63e52f2687631"
                                 },
                                 {
@@ -2425,15 +2425,15 @@
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
-                                        "width": "",
+                                        "width": "33",
                                         "class": "",
                                         "id": ""
                                     },
                                     "default_value": "",
+                                    "maxlength": "",
                                     "placeholder": "",
                                     "prepend": "",
                                     "append": "",
-                                    "maxlength": "",
                                     "parent_repeater": "field_63e52f2687631"
                                 }
                             ]
@@ -2468,5 +2468,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735325583
+    "modified": 1735427187
 }

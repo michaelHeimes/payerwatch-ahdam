@@ -1,9 +1,11 @@
 article.post-archive-card {
 	margin-bottom: .75rem;
+	height: auto;
 	@include breakpoint(medium) {
 		margin-bottom: 1.75rem;
 	}
 	.inner {
+		height: 100%;
 		padding: 2.4rem 1.5rem 1.15rem;
 		transition: background-color .3s ease;
 		
@@ -54,13 +56,13 @@ article.post-archive-card {
 		    }
 		}
 		
-	&.navy-bg:hover {
-		background-color: #12058f;
-	}
-		
-	&.violet-bg:hover {
-		background-color: #9123F0;
-	}
+		&.navy-bg:hover {
+			background-color: #12058f;
+		}
+			
+		&.violet-bg:hover {
+			background-color: #9123F0;
+		}
 		
 	}
 	

@@ -24,14 +24,12 @@
 	<?php wp_body_open(); ?>
 			<a class="skip-link screen-reader-text show-on-focus" href="#primary"><?php esc_html_e( 'Skip to content', 'trailhead' ); ?></a>
 		
-			<div class="sticky-container">
-				<header class="site-header" role="banner" data-sticky data-margin-top="0" data-sticky-on="small">
+				<header class="site-header" role="banner">
 					<div class="bg-wrap has-bg">
 						<div class="bg"></div>
 					</div>
 					<?php get_template_part( 'template-parts/nav', 'offcanvas-topbar' ); ?>
 				</header><!-- #masthead -->
-			</div>
 				
 				<div class="off-canvas-wrapper <?php $color_theme = get_field('color_theme'); if($color_theme): echo ' picked-color color-theme-' . $color_theme; endif;?>">
 				

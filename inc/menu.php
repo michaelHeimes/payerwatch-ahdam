@@ -56,12 +56,24 @@ class Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
 }
 
 // The Footer Menu
-function trailhead_footer_links() {
+function trailhead_footer_links1() {
 	wp_nav_menu(array(
 		'container'			=> 'false',				// Remove nav container
-		'menu_id'			=> 'footer-links',		// Adding custom nav id
-		'menu_class'		=> 'menu',				// Adding custom nav class
-		'theme_location'	=> 'footer-links',		// Where it's located in the theme
+		'menu_id'			=> 'footer-links1',		// Adding custom nav id
+		'menu_class'		=> 'menu vertical',				// Adding custom nav class
+		'theme_location'	=> 'footer-links1',		// Where it's located in the theme
+		'depth'				=> 0,					// Limit the depth of the nav
+		'fallback_cb'		=> ''					// Fallback function
+	));
+} /* End Footer Menu */
+
+// The Footer Menu
+function trailhead_footer_links2() {
+	wp_nav_menu(array(
+		'container'			=> 'false',				// Remove nav container
+		'menu_id'			=> 'footer-links2',		// Adding custom nav id
+		'menu_class'		=> 'menu vertical',				// Adding custom nav class
+		'theme_location'	=> 'footer-links2',		// Where it's located in the theme
 		'depth'				=> 0,					// Limit the depth of the nav
 		'fallback_cb'		=> ''					// Fallback function
 	));

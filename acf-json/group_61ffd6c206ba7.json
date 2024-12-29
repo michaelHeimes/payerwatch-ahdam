@@ -6,17 +6,17 @@
             "key": "field_61ffd96b49782",
             "label": "Photo",
             "name": "photo",
+            "aria-label": "",
             "type": "image",
             "instructions": "Minimum 330px X 330px or 660px X 600px",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "return_format": "array",
-            "preview_size": "medium",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -24,31 +24,54 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "preview_size": "thumbnail"
         },
         {
-            "key": "field_61ffd6c9ef36b",
-            "label": "Title",
-            "name": "title",
+            "key": "field_677045ed1568f",
+            "label": "First Name",
+            "name": "first_name",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
+        },
+        {
+            "key": "field_61ffd6c9ef36b",
+            "label": "Title",
+            "name": "title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_61ffd72d5fc10",
             "label": "Blurb",
             "name": "blurb",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -68,6 +91,7 @@
             "key": "field_61ffd6d6ef36c",
             "label": "LinkedIn URL",
             "name": "linkedin_url",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -87,6 +111,7 @@
             "key": "field_61ffd6dfef36d",
             "label": "Phone Number",
             "name": "phone_number",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -106,6 +131,7 @@
             "key": "field_61ffd6f2ef36e",
             "label": "Email Address",
             "name": "email_address",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -136,9 +162,11 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1644157700
+    "modified": 1735411552
 }

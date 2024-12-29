@@ -6,6 +6,7 @@
             "key": "field_61ffe760b05f8",
             "label": "Color",
             "name": "logo_color",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -48,5 +49,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1644161951
+    "modified": 1735427179
 }

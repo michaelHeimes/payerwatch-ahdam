@@ -1,10 +1,15 @@
-<?php $block = get_row_index();?>	
+<?php 
+if(!defined('ABSPATH')) {
+	exit;
+}
+$block = get_row_index();
+?>	
 <section class="sticky-heading-nav-paragraphs module navy-bg">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			
 			<?php if( have_rows('paragraphs') ):?>
-				<div class="nav-wrap cell small-12 medium-6 show-for-medium" data-sticky-container>
+				<div class="nav-wrap cell small-12 medium-6 show-for-medium" data-sticky-container data-magellan>
 					<div class="sticky" data-sticky data-anchor="block-<?php echo $block;?>" data-margin-top="10">
 						<ul class="menu expanded vertical" data-magellan data-offset="100">
 							
@@ -12,14 +17,12 @@
 							
 								<?php 
 									$row = get_row_index();
-									$target = get_sub_field('heading');
-									$new_target = preg_replace("/[^a-zA-Z0-9\s]/", "", $target);
-									$target_dashed = str_replace(" ", "-", $new_target);
+									$target = sanitize_title(get_sub_field('heading'));
 								?>
 							
 								<li class="link-wrap">
 									<h2>
-										<a class="large-black-text grid-x align-middle" href="#<?php echo strtolower($target_dashed);?>">
+										<a class="large-black-text grid-x align-middle" href="#<?php echo $target;?>">
 											<?php the_sub_field('heading');?>
 										</a>
 									</h2>
@@ -37,12 +40,10 @@
 				<?php while ( have_rows('paragraphs') ) : the_row();?>	
 					<?php 
 						$row = get_row_index();
-						$target = get_sub_field('heading');
-						$new_target = preg_replace("/[^a-zA-Z0-9\s]/", "", $target);
-						$target_dashed = str_replace(" ", "-", $new_target);
+						$target = sanitize_title(get_sub_field('heading'));
 					?>
 				
-					<div class="section" id="<?php echo strtolower($target_dashed);?>" data-magellan-target="<?php echo strtolower($target_dashed);?>">
+					<div class="section" id="<?php echo $target;?>" data-magellan-target="<?php echo strtolower($target);?>">
 						<h3 class="hide-for-medium"><?php the_sub_field('heading');?></h3>
 						<div class="copy-wrap"><p><span class="large-copy"><?php the_sub_field('text');?></span></p></div>
 					</div>

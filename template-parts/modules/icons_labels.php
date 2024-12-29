@@ -1,12 +1,17 @@
 <?php
-	$heading = get_sub_field('heading');
-	$icons_w_labels = get_sub_field('icons_w_labels');
+if(!defined('ABSPATH')) {
+	exit;
+}
+$heading = get_sub_field('heading') ?? null;
+$icons_w_labels = get_sub_field('icons_w_labels') ?? null;
 ?>
 <section class="icons-labels module text-center">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			<?php if(!empty($heading)):?>
-				<h2><?php echo $heading;?></h2>
+				<div class="cell small-12">
+					<h2><?php echo $heading;?></h2>
+				</div>
 			<?php endif;?>
 			<?php foreach( $icons_w_labels as $icons_label ):
 				$label = $icons_label['label'];	

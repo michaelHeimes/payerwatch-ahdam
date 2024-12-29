@@ -1,63 +1,117 @@
 <?php
 /**
- * The template for displaying the footer
+ * The template for displaying the footer. 
  *
- * Contains the closing of the #content div and all content after.
+ * Comtains closing divs for header.php.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package trailhead
- */
-
-?>
-
-				<footer id="colophon" class="site-footer">
-					<div class="site-info">
-						<div class="grid-container">
-							<div class="grid-x grid-padding-x">
-								<div class="cell small-12">
-									<?php 
-									$image = get_field('footer_logo', 'option');
-									if( !empty( $image ) ): ?>
-									<div class="top">
-										<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+ * For more info: https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ */		
+ 
+ if(!defined('ABSPATH')) {
+	 exit;
+ }
+ 	
+ ?>
+					
+				<footer class="footer navy-bg small-copy" role="contentinfo">
+					<div class="grid-container">
+						<div class="inner-footer grid-x grid-padding-x">
+							
+							<div class="logo-wrap cell small-12 tablet-shrink">
+								<ul class="menu logo-menu">
+									<li class="menu show-for-sr"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
+									<li class="logo footer-logo"><a href="<?php echo home_url(); ?>">
+										<?php 
+										$image = get_field('footer_logo', 'option');
+										if( !empty( $image ) ): ?>
+										    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+										<?php endif; ?>	
+									</a></li>
+								</ul>
+							</div>
+							
+							<div class="right cell small-12 tablet-auto xlarge-offset-1">
+								<div class="grid-x grid-padding-x">
+									<div class="cell small-12 medium-6">
+										
+										<div class="grid-x grid-padding-x small-up-2">
+											<div class="item cell location">
+												<h3 class="mint">Location</h3>
+												<a href="<?php the_field('directions_url', 'option');?>" target="_blank">
+													<?php the_field('address', 'option');?>
+												</a>
+											</div>
+											<div class="item cell in-touch">
+												<h3 class="mint">Get In Touch</h3>
+												<div>
+													<a href="tel:<?php the_field('phone_number', 'option');?>">
+														+<?php the_field('phone_number', 'option');?>
+													</a>
+												</div>
+												<div>
+													<a href="mailto:<?php the_field('email_address', 'option');?>">
+														<?php the_field('email_address', 'option');?>
+													</a>
+												</div>
+											</div>	
+											<div class="item cell hours">
+												<h3 class="mint">Hours</h3>
+												<?php the_field('hours', 'option');?>
+											</div>			
+											<div class="item social cell">
+												<?php trailhead_social_links(); ?>
+											</div>												
+										</div>
+										
 									</div>
-									<?php endif; ?>
-									<?php 
-									$link = get_field('parent_company_link', 'option');
-									if( $link ): 
-										$link_url = $link['url'];
-										$link_title = $link['title'];
-										$link_target = $link['target'] ? $link['target'] : '_self';
-										?>
-									<div class="bottom">
-										<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+									
+									<div class="item cell small-12 medium-6">
+										
+										<div class="grid-x grid-padding-x">
+											<div class="cell sitemap">
+												<h3 class="mint">Sitemap</h3>
+											</div>
+											<div class="cell small-6">
+												<nav role="navigation">
+						    						<?php trailhead_footer_links1(); ?>
+						    					</nav>
+						    				</div>
+		
+											<div class="cell small-6">
+												<nav role="navigation">
+						    						<?php trailhead_footer_links2(); ?>
+						    					</nav>
+						    				</div>
+											
+											<div class="cell">
+												
+											</div>
+									
+										</div>
+										
 									</div>
-									<?php endif; ?>	
-									<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_s' ) ); ?>">
-										<?php
-										/* translators: %s: CMS name, i.e. WordPress. */
-										printf( esc_html__( 'Proudly powered by %s', '_s' ), 'WordPress' );
-										?>
-									</a>
-									<span class="sep"> | </span>
-										<?php
-										/* translators: 1: Theme name, 2: Theme author. */
-										printf( esc_html__( 'Theme: %1$s by %2$s.', '_s' ), '_s', '<a href="https://automattic.com/">Automattic</a>' );
-										?>
+								
 								</div>
 							</div>
+						</div> <!-- end #inner-footer -->
+					</div>
+					
+					<div class="grid-container fluid">
+						<div class="grid-x grid-padding-x">
+							<div class="cell text-right">
+								<p class="source-org copyright small">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> | <a href="https://proprdesign.com/" target="_blank">Made by Propr</a></p>
+							</div>
 						</div>
-					</div><!-- .site-info -->
-				</footer><!-- #colophon -->
-					
-			</div><!-- #page -->
+					</div>
+				
+				</footer> <!-- end .footer -->
 			
-		</div>  <!-- end .off-canvas-content -->
-							
-	</div> <!-- end .off-canvas-wrapper -->
+			</div>  <!-- end .off-canvas-content -->
 					
-<?php wp_footer(); ?>
-
-</body>
-</html>
+		</div> <!-- end .off-canvas-wrapper -->
+		
+		<?php wp_footer(); ?>
+		
+	</body>
+	
+</html> <!-- end page -->

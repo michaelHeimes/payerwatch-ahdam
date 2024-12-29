@@ -3,6 +3,38 @@
 Stylesheet: Global Stylesheet
 
 *************************************************/
+.page-template-page-sidebar .site {
+	@extend .grid-x;
+	.banner {
+		width: 100%;
+	}
+	.banner-cta {
+		.cell.small-12.large-shrink {
+			@include breakpoint(large) {
+				width: calc(100% - 90px);
+			}
+		}
+	}
+	main {
+		@extend .cell;
+		@extend .small-12;
+		//@extend .large-10;
+		@extend .large-9;
+	}
+	aside {
+		@extend .grid-container;
+		@extend .cell;
+		@extend .small-12;
+		//@extend .large-2;
+		@extend .large-3;
+		position: relative;
+		z-index: 1;
+	}
+	footer {
+		@extend .cell;
+		@extend .small-12;
+	}
+}
 /*********************
 BACKGROUND COLORS
 *********************/
@@ -50,8 +82,57 @@ svg {
 	}
 }
 
-ul.slick-dots,
+.vm-link,
+a.vm-link {
+	display: inline-flex;
+	color: $brand-navy;
+	span {
+		display: inline-block;
+		margin-right: 2.625rem;
+		font-size: rem-calc(12);
+		font-weight: bold;
+		letter-spacing: .5px;
+		text-transform: uppercase;
+	}
+	svg {
+		transition: transform .3s ease;	
+	}
+&:hover {
+	svg {
+		transform: translateX(1rem);
+	}
+}
+}
+
+.wp-block-button {
+	width: 100%;
+}
+
+a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn) {
+	background-color: $brand-mint;
+	color: $brand-navy;
+	width: 100%;
+	font-size: rem-calc(24);
+	line-height: 1;
+	color: $brand-navy;
+	border-color: $brand-mint;
+	
+&:hover {
+	border-color: $brand-mint-hover;
+	background-color: $brand-mint-hover;
+	color: $brand-navy;
+}
+
+}
+
+button.large,
+a.button.large {
+	
+}
+
+.swiper-pagination,
 ul.card-nav {
+	position: static;
 	list-style: none;
 	padding: 2.15rem 0;
 	margin: 0;
@@ -60,28 +141,40 @@ ul.card-nav {
 	align-items: center;
 	justify-content: flex-end;
 	
-	li {
-		button {
-			font-size: 0;
-			width: 1rem;
-			height: 1rem;
-			cursor: pointer;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			
+	.swiper-pagination-bullet,
+	li button {
+		font-size: 0;
+		width: 1rem;
+		height: 1rem;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		
 		&:before {
 			content: '';
 			width: 10px;
 			height: 10px;
 			border-radius: 100%;
 			background-color: $brand-blue;
+			opacity: 1;
+		}
+		&:after {
+			display: none;
 		}
 		
+		.swiper-pagination-bullet-active:before,
 		&[aria-selected="true"]:before {
 			background-color: $brand-mint !important;
 		}
-			
+		
+	}
+	
+	.swiper-pagination-bullet {
+		background: transparent;
+		opacity: 1;
+		&.swiper-pagination-bullet-active:before {
+			background-color: $brand-mint !important;
 		}
 	}
 	

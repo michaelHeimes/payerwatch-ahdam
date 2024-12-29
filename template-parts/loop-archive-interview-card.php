@@ -5,13 +5,14 @@
  * Used for single, index, archive, search.
  */
  $expert = get_field('select_expert');
- $expert_name = get_the_title( $expert->ID );
- $permalink = get_permalink( $expert->ID );
+ $expert_name = get_the_title( $expert );
+ $permalink = get_permalink( $expert );
  $expert_first_name = str_word_count( $expert_name, 1);
+ 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('post-archive-card cell small-12 medium-6'); ?> role="article">		
-	<div class="inner royal-blue-bg">				
+<article id="post-<?php the_ID(); ?>" <?php post_class('post-archive-card swiper-slide cell small-12 medium-6 grid-x flex-dir-column'); ?> role="article">		
+	<div class="inner royal-blue-bg grid-x flex-dir-column align-justify">				
 		<header class="article-header">
 			<div class="archive-tag white">Interview with <a class="mint" href="<?php echo esc_url( $permalink ); ?>"><?php echo $expert_first_name[0];?></a></div>
 			<h2 class="white"><?php the_title(); ?></h2>

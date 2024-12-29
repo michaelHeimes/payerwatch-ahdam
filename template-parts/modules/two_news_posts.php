@@ -1,17 +1,22 @@
+<?php
+if(!defined('ABSPATH')) {
+	exit;
+}
+$args = array(  
+	'post_type' => 'news',
+	'post_status' => 'publish',
+	'posts_per_page' => 2,
+);
+
+$loop = new WP_Query( $args ); 
+
+if( $loop->have_posts() ):
+?>
 <section class="two-news-posts module">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			
 			<?php			
-			$args = array(  
-			    'post_type' => 'news',
-			    'post_status' => 'publish',
-			    'posts_per_page' => 2,
-			);
-			
-			$loop = new WP_Query( $args ); 
-			
-			    
 			    while ( $loop->have_posts() ) : $loop->the_post();
 				
 				get_template_part('template-parts/loop', 'archive-news-card');
@@ -40,3 +45,4 @@
 		</div>
 	</div>
 </section>
+<?php endif;?>

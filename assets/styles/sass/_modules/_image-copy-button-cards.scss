@@ -1,5 +1,9 @@
 .image-copy-button-cards {
-	
+	@include breakpoint(small down) {
+		.left {
+			margin-bottom: 4rem;
+		}
+	}
 	.img-wrap {
 	    padding-bottom: 2.6rem;
 	}

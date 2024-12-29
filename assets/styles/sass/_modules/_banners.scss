@@ -46,6 +46,11 @@
 			max-width: 50%;
 		}
 		
+		.left-inner {
+			transform: translateY(70px);
+			opacity: 0;
+		}
+		
 		.bg.banner-bg-skew {
 			width: calc(100% + 400px);
 			left: -300px;
@@ -70,6 +75,8 @@
 		
 		.btn-link {
 			padding-top: 1.05rem;
+			transform: translateX(-70px);
+			opacity: 0;
 		}
 		
 	}

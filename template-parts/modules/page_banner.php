@@ -6,9 +6,9 @@ $size = 'full';
 $heading = get_sub_field('heading') ?? null;
 $large_text = get_sub_field('large_text') ?? null;
 $text = get_sub_field('text') ?? null;
-$link = get_sub_field('link') ?? null;
+$link = get_sub_field('button_link') ?? null;
 ?>
-<div class="banner page-banner has-bg grid-x align-bottom">
+<section class="banner page-banner has-bg grid-x align-bottom">
 	<div class="banner-img bg has-bg">
 		<?php if(is_archive()):?>
 		
@@ -115,4 +115,4 @@ $link = get_sub_field('link') ?? null;
 		<?php endwhile;?>
 	</div>
 	<?php endif;?>
-</div>
+</section>
