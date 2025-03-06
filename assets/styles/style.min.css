@@ -9192,7 +9192,6 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  margin-top: 1em;
 }
 
 /*********************
@@ -10488,6 +10487,10 @@ footer.footer .source-org {
 }
 .banner.home-banner .right img {
   position: relative;
+}
+
+.color-theme-violet .banner.home-banner .right .img-wrap span {
+  border-color: #c84dff;
 }
 
 .banner-cta {

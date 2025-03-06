@@ -8,7 +8,7 @@
  *
  * @package trailhead
  */
-
+$color_theme = get_field('color_theme') ?? null;
 ?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
@@ -20,7 +20,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('picked-color color-theme-' . $color_theme); ?>>
 	<?php wp_body_open(); ?>
 			<a class="skip-link screen-reader-text show-on-focus" href="#primary"><?php esc_html_e( 'Skip to content', 'trailhead' ); ?></a>
 		
@@ -31,7 +31,7 @@
 					<?php get_template_part( 'template-parts/nav', 'offcanvas-topbar' ); ?>
 				</header><!-- #masthead -->
 				
-				<div class="off-canvas-wrapper <?php $color_theme = get_field('color_theme'); if($color_theme): echo ' picked-color color-theme-' . $color_theme; endif;?>">
+				<div class="off-canvas-wrapper">
 				
 				<!-- Load off-canvas container. Feel free to remove if not using. -->			
 				<?php get_template_part( 'template-parts/content', 'offcanvas' ); ?>

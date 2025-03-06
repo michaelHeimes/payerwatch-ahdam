@@ -28,6 +28,12 @@
 	
 }
 
+.color-theme-violet {
+	.banner.home-banner .right .img-wrap span {
+		border-color: $brand-violet;
+	}
+}
+
 .banner-cta {
 	margin-top: -61px;
 	overflow: hidden;

@@ -8,6 +8,9 @@ $large_text = get_sub_field('large_text') ?? null;
 $text = get_sub_field('text') ?? null;
 $link = get_sub_field('button_link') ?? null;
 $image = get_sub_field('image') ?? null;
+$cta = get_sub_field('cta');
+$cta_text = $cta['text'] ?? null;
+$cta_link = $cta['link'] ?? null;
 ?>
 <section class="banner home-banner royal-navy-gradient-bg" data-equalizer-watch="header-gradient">
 	<div class="inner wide-width">
@@ -61,21 +64,22 @@ $image = get_sub_field('image') ?? null;
 	</div>
 </section>
 
-<?php if( have_rows('cta') ):?>
+<?php if( $cta_text || $cta_link ):?>
 <section class="banner-cta">
-	<?php while ( have_rows('cta') ) : the_row();?>	
 	<div class="grid-container fluid">
 		<div class="grid-x grid-padding-x align-right">
 			<div class="cell small-12 large-shrink">
 				<div class="inner grid-x grid-padding-x align-middle has-bg">
 					<div class="bg mint-bg"></div>
 					<div class="bg blue-bg"></div>
-					<div class="cta-left cell small-12 medium-auto white relative">
-						<?php the_sub_field('text');?>
-					</div>
+					<?php if( $cta_text ):?>
+						<div class="cta-left cell small-12 medium-auto white relative">
+							<?=wp_kses_post($cta_text);?>
+						</div>
+					<?php endif;?>
 					<div class="cta-right cell small-12 medium-shrink relative">
 						<?php 
-						$link = get_sub_field('button_link');
+						$link = $cta_link;
 						if( $link ): 
 						    $link_url = $link['url'];
 						    $link_title = $link['title'];
@@ -88,6 +92,5 @@ $image = get_sub_field('image') ?? null;
 			</div>
 		</div>
 	</div>
-	<?php endwhile;?>
 </section>
 <?php endif;?>

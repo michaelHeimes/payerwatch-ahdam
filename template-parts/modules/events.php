@@ -3,6 +3,24 @@ if(!defined('ABSPATH')) {
 	exit;
 }
 $heading = get_sub_field('heading') ?? null;
+
+$today = date('Ymd');	
+$args = array(  
+	'post_type' => 'event',
+	'post_status' => 'publish',
+	'meta_key'  => 'event_date',
+	'orderby'   => 'meta_value_num',
+	'order'     => 'ASC',					    
+	'posts_per_page' => 99999,
+	'meta_query' => array(
+		'key' => 'event_date',
+		'compare' => '>=',
+		'value' => $today,
+	),
+);
+
+$loop = new WP_Query( $args ); 
+if( $loop->have_posts() ):
 ?>
 <section class="events module sky-blue-bg">
 	<div class="grid-container">
@@ -17,27 +35,7 @@ $heading = get_sub_field('heading') ?? null;
 			<div class="cell small-12 large-10 large-offset-1">
 				<div class="events-grid grid-x grid-padding-x small-up-1 medium-up-3">
 
-					<?php
-					$today = date('Ymd');	
-					$args = array(  
-					    'post_type' => 'event',
-					    'post_status' => 'publish',
-					    'meta_key'  => 'event_date',
-					    'orderby'   => 'meta_value_num',
-					    'order'     => 'ASC',					    
-						'posts_per_page' => 99999,
-						'meta_query' => array(
-							'key' => 'event_date',
-							'compare' => '>=',
-							'value' => $today,
-						),
-					);
-					
-					$loop = new WP_Query( $args ); 
-					
-					    
-					    while ( $loop->have_posts() ) : $loop->the_post();?>
-						
+					<?php while ( $loop->have_posts() ) : $loop->the_post();?>
 						<article id="post-<?php the_ID(); ?>" <?php post_class('event-card cell'); ?> role="article">		
 							<div class="fh inner">				
 								<a class="fh grid-x flex-dir-column navy" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
@@ -86,3 +84,4 @@ $heading = get_sub_field('heading') ?? null;
 		</div>
 	</div>
 </section>
+<?php endif;?>

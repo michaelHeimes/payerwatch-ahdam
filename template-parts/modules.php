@@ -98,7 +98,11 @@ if(!defined('ABSPATH')) {
 	
 	get_template_part('template-parts/modules/icons_labels');
 	
-	endif;?>	
+	elseif ( get_row_layout() == 'membership_cta' ) : 
+	
+	get_template_part('template-parts/modules/membership_cta');
+	
+	endif;?>
 	
 <?php endwhile;?>
 <?php endif;?>

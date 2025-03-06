@@ -421,11 +421,11 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_62065a777b829",
-                            "label": "",
-                            "name": "",
+                            "key": "field_67c8886e92a13",
+                            "label": "Source",
+                            "name": "source",
                             "aria-label": "",
-                            "type": "message",
+                            "type": "button_group",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -434,9 +434,120 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "choices": {
+                                "global": "Global",
+                                "custom": "Custom"
+                            },
+                            "default_value": "",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "layout": "horizontal"
+                        },
+                        {
+                            "key": "field_62065a777b829",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_67c8886e92a13",
+                                        "operator": "==",
+                                        "value": "global"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "message": "This module is edited in <a href=\"\/wp-admin\/admin.php?page=theme-options\"><u>Theme Settings<\/u><\/a>",
                             "new_lines": "wpautop",
                             "esc_html": 0
+                        },
+                        {
+                            "key": "field_67c888f792a14",
+                            "label": "Large Text",
+                            "name": "large_text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_67c8886e92a13",
+                                        "operator": "==",
+                                        "value": "custom"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_67c891d692a15",
+                            "label": "Text",
+                            "name": "text",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_67c8886e92a13",
+                                        "operator": "==",
+                                        "value": "custom"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_67c891de92a16",
+                            "label": "Button Link",
+                            "name": "button_link",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_67c8886e92a13",
+                                        "operator": "==",
+                                        "value": "custom"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
                         }
                     ],
                     "min": "",
@@ -1566,6 +1677,34 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_67c8f71bd4b10": {
+                    "key": "layout_67c8f71bd4b10",
+                    "name": "membership_cta",
+                    "label": "Membership CTA",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67c8f873d4b12",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "This is global element that can be edited in the <a href=\"\/wp-admin\/admin.php?page=theme-options\">Theme Options<\/a>",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_6200457a3fef7": {
                     "key": "layout_6200457a3fef7",
                     "name": "partner_quotes_slider",
@@ -2443,9 +2582,9 @@
                     "max": ""
                 }
             },
-            "button_label": "Add Module",
             "min": "",
-            "max": ""
+            "max": "",
+            "button_label": "Add Module"
         }
     ],
     "location": [
@@ -2468,5 +2607,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735427187
+    "modified": 1741224156
 }
