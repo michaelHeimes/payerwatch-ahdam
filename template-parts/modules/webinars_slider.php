@@ -9,14 +9,23 @@ $args = array(
 	'posts_per_page' => 99999,
 );
 $loop = new WP_Query( $args ); 
+
+$theme_brand = get_field('theme_brand', 'option') ?? null;
+
+if( $theme_brand = 'ahdam' ) {
+	$heading_color = 'navy';	
+} else {
+	$heading_color = 'violet';
+}
+
 ?>
 <section class="webinars-slider-module slider-module module">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			
 			<?php if( !empty( $heading ) ):?>
-			<div class="cell small-12 large-10 large-offset-1">
-				<h2 class="violet h3 big-h3"><?=esc_html( $heading );?></h2>
+			<div class="cell small-12">
+				<h2 class="<?=$heading_color;?> h3 big-h3"><?=esc_html( $heading );?></h2>
 			</div>
 			<?php endif;?>
 			

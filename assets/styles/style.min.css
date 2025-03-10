@@ -8584,6 +8584,10 @@ Stylesheet: Global Stylesheet
   position: relative;
   z-index: 1;
 }
+.grid-container.extended, .page-template-page-sidebar .site aside.extended {
+  max-width: 85rem;
+}
+
 /*********************
 BACKGROUND COLORS
 *********************/
@@ -9277,6 +9281,20 @@ a.view-all-link {
   overflow: hidden;
 }
 
+.has-object-fit {
+  position: relative;
+  overflow: hidden;
+}
+.has-object-fit > .img-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .bg {
   position: absolute;
   top: 0;
@@ -9308,6 +9326,10 @@ a.view-all-link {
 
 .sky-blue-bg {
   background-color: #dce7f0;
+}
+
+.light-blue-bg {
+  background-color: #F0F9FF;
 }
 
 .royal-blue-bg,
@@ -9602,6 +9624,22 @@ a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).royal-bg:hover,
   border-color: #051498;
   background-color: #051498;
 }
+a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg,
+button:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg,
+a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg,
+.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg {
+  border-color: #c84dff;
+  background-color: #c84dff;
+  color: #050D57;
+}
+a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg:hover,
+button:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg:hover,
+a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg:hover,
+.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg:hover {
+  border-color: #201dd0;
+  background-color: #201dd0;
+  color: #ffffff;
+}
 a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).large,
 button:not([role=tab]):not(.close-button):not(.enlarge-btn).large,
 a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).large,
@@ -9835,6 +9873,14 @@ h3.big-h3,
   .h3.big-h3 {
     font-size: 3.9375rem;
   }
+}
+h3.big-h3.royal,
+.h3.big-h3.royal {
+  color: #201dd0;
+}
+h3.big-h3.navy,
+.h3.big-h3.navy {
+  color: #050D57;
 }
 
 .jumbo {
@@ -10230,6 +10276,14 @@ footer.footer .logo-wrap {
 }
 footer.footer .logo-wrap .footer-logo {
   max-width: 360px;
+}
+footer.footer .logo-wrap .ahdam-about {
+  padding-top: 2.5rem;
+}
+footer.footer .logo-wrap .ahdam-about .heading {
+  text-transform: uppercase;
+  font-size: 0.9375rem;
+  padding-bottom: 0.4375rem;
 }
 footer.footer h3 {
   font-size: 0.875rem;
@@ -11848,6 +11902,9 @@ article.event-card a:hover svg {
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
 }
+.sticky-heading-nav-paragraphs.remove-top-spacing-1 {
+  margin-top: 0;
+}
 .sticky-heading-nav-paragraphs .block h3 {
   font-weight: 600;
 }
@@ -11929,6 +11986,10 @@ article.event-card a:hover svg {
 }
 .sticky-heading-nav-paragraphs .nav-wrap a.is-active:before {
   background-color: #00FAB8;
+}
+
+.brand-ahdam .sticky-heading-nav-paragraphs .nav-wrap a.is-active:before {
+  background-color: #c84dff;
 }
 
 .color-theme-mint-green .banner-gradient,
@@ -12063,5 +12124,26 @@ article.event-card a:hover svg {
 .icons-labels i {
   font-size: 4rem;
   color: #00fab8;
+}
+
+.membership-cta.module .h4 {
+  margin: 0;
+  padding: 1.16em;
+}
+.membership-cta.module .img-wrap {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.membership-cta.module .disclaimer {
+  margin-top: 70px;
+}
+@media print, screen and (min-width: 40em) {
+  .membership-cta.module .disclaimer {
+    margin-top: 113px;
+  }
+}
+.membership-cta.module .disclaimer .light-blue-bg {
+  padding: 1.75rem 3.2rem;
 }
 /*# sourceMappingURL=style.min.css.map */

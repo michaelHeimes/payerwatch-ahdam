@@ -179,6 +179,83 @@
             "mime_types": ""
         },
         {
+            "key": "field_67cf4d5484960",
+            "label": "Footer About Text (AHDAM ONLY)",
+            "name": "footer_about_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67c8961ff69d7",
+                        "operator": "==",
+                        "value": "ahdam"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_67cf55f5796ac",
+            "label": "Footer Information Links (AHDAM ONLY)",
+            "name": "footer_information_links_ahdam_only",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_67c8961ff69d7",
+                        "operator": "==",
+                        "value": "ahdam"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Link",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_67cf5617796ad",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_67cf55f5796ac"
+                }
+            ]
+        },
+        {
             "key": "field_60f22cef6a7f4",
             "label": "Contact Info",
             "name": "",
@@ -679,6 +756,26 @@
                 "id": ""
             },
             "return_format": "array"
+        },
+        {
+            "key": "field_67cf236c549c1",
+            "label": "Disclaimer Copy",
+            "name": "mcta_disclaimer_copy",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
         }
     ],
     "location": [
@@ -699,5 +796,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741223182
+    "modified": 1741641565
 }

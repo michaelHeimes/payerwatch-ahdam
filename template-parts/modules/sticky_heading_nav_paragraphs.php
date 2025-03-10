@@ -3,8 +3,9 @@ if(!defined('ABSPATH')) {
 	exit;
 }
 $block = get_row_index();
+$remove_top_spacing = get_sub_field('remove_top_spacing');
 ?>	
-<section class="sticky-heading-nav-paragraphs module navy-bg">
+<section class="sticky-heading-nav-paragraphs module navy-bg remove-top-spacing-<?=$remove_top_spacing;?>">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			

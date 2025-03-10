@@ -1,0 +1,18 @@
+.membership-cta.module {
+	.h4 {
+		margin: 0;
+		padding: 1.16em;
+	}
+	.img-wrap {
+		flex: 1;
+	}
+	.disclaimer {
+		margin-top: 70px;
+		@include breakpoint(medium) {
+			margin-top: 113px;
+		}
+		.light-blue-bg {
+			padding: 1.75rem 3.2rem;
+		}
+	}
+}

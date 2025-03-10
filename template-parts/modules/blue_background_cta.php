@@ -15,9 +15,17 @@ if( $source == 'custom' ) {
 	$link = get_field('bbcta_button_link', 'option') ?? null;	
 }
 
+$theme_brand = get_field('theme_brand', 'option') ?? null;
+
+if( $theme_brand = 'ahdam' ) {
+	$btn_bg_color = 'violet-bg';	
+} else {
+	$btn_bg_color = 'mint-bg';
+}
+
 ?>
 <section class="blue-background-cta module blue-bg color-bg">
-	<div class="grid-container<?php if( $source == 'custom') { echo 'xl'; }?>">
+	<div class="grid-container<?php if( $source == 'custom') { echo ' extended'; }?>">
 		<div class="grid-x grid-padding-x">
 			<div class="cell small-12">
 				<div class="grid-x grid-padding-x align-center align-middle">
@@ -43,7 +51,7 @@ if( $source == 'custom' ) {
 						$link_target = $link['target'] ? $link['target'] : '_self';
 						?>
 						<div class="cell shrink">
-							<a class="button mint-bg" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+							<a class="button <?=$btn_bg_color;?>" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 						</div>
 					<?php endif; ?>				
 				</div>

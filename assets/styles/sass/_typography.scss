@@ -20,7 +20,13 @@ h3,
 	color: $brand-violet;
 	@include breakpoint(medium) {
 		font-size: rem-calc(63);
-	}		
+	}	
+	&.royal {
+		color: $brand-royal;
+	}	
+	&.navy {
+		color: $brand-navy;
+	}	
 }
 }
 

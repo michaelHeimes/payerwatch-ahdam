@@ -19,6 +19,16 @@ $args = array(
 	),
 );
 
+$theme_brand = get_field('theme_brand', 'option') ?? null;
+
+if( $theme_brand = 'ahdam' ) {
+	$heading_color = 'navy';	
+	$date_color = 'white';
+} else {
+	$heading_color = 'royal';	
+	$date_color = 'mint';
+}
+
 $loop = new WP_Query( $args ); 
 if( $loop->have_posts() ):
 ?>
@@ -28,7 +38,7 @@ if( $loop->have_posts() ):
 			
 			<?php if( !empty( $heading ) ):?>
 				<div class="cell small-12 large-10 large-offset-1">
-					<h2 class="brand-royal h3 big-h3"><?php the_sub_field('heading');?></h2>
+					<h2 class="<?=$heading_color;?> h3 big-h3"><?php the_sub_field('heading');?></h2>
 				</div>
 			<?php endif;?>
 			
@@ -42,7 +52,7 @@ if( $loop->have_posts() ):
 									<div>
 										<header class="article-header">
 											<?php $date_string = get_field('event_date'); $date = DateTime::createFromFormat('Ymd', $date_string);?>
-											<div class="date mint has-bg large-copy">
+											<div class="date <?=$date_color;?> has-bg large-copy">
 												<div class="bg royal-blue-bg"></div>
 												<span><?php echo $date->format('m'); ?>.</span><span><?php echo $date->format('d'); ?>.</span><span><?php echo $date->format('y'); ?></span>
 											</div>

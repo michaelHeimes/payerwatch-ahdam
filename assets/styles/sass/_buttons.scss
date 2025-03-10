@@ -38,11 +38,11 @@ a.button,
 			border-color: $brand-mint;
 			background-color: $brand-mint;
 			color: $brand-navy;
-			
-		&:hover {
-			border-color: $brand-mint-hover;
-			background-color: $brand-mint-hover;
-		}
+				
+			&:hover {
+				border-color: $brand-mint-hover;
+				background-color: $brand-mint-hover;
+			}
 		
 		}
 
@@ -51,10 +51,23 @@ a.button,
 			background-color: $brand-royal;
 			color: $white;
 			
-		&:hover {
-			border-color: #051498;
-			background-color: #051498;
+			&:hover {
+				border-color: #051498;
+				background-color: #051498;
+			}
+		
 		}
+		
+		&.violet-bg {
+			border-color: $brand-violet;
+			background-color: $brand-violet;
+			color: $brand-navy;
+			
+			&:hover {
+				border-color: $brand-royal;
+				background-color: $brand-royal;
+				color: $white;
+			}
 		
 		}
 		

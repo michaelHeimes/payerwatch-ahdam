@@ -7,10 +7,19 @@ $mcta_image = get_field('mcta_image', 'option') ?? null;
 $mcta_heading = get_field('mcta_heading', 'option') ?? null;
 $mcta_text = get_field('mcta_text', 'option') ?? null;
 $mcta_button_link = get_field('mcta_button_link', 'option') ?? null;
+$mcta_disclaimer_copy = get_field('mcta_disclaimer_copy', 'option') ?? null;
 
-if( !empty($mcta_pricepoint) || !empty($mcta_image) || !empty($mcta_heading) || !empty($mcta_text) || !empty($mcta_button_link) ):
+$theme_brand = get_field('theme_brand', 'option') ?? null;
+
+if( $theme_brand = 'ahdam' ) {
+	$btn_bg_color = 'violet-bg';	
+} else {
+	$btn_bg_color = 'mint-bg';
+}
+
+if( !empty($mcta_pricepoint) || !empty($mcta_image) || !empty($mcta_heading) || !empty($mcta_text) || !empty($mcta_button_link) || !empty($mcta_disclaimer_copy) ):
 ?>
-<section class="membership-cta">
+<section class="membership-cta module">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x align-justify">
 			<?php if( !empty($mcta_pricepoint) || !empty($mcta_image) ):?>
@@ -23,7 +32,8 @@ if( !empty($mcta_pricepoint) || !empty($mcta_image) || !empty($mcta_heading) || 
 						<?php endif;?>
 						<?php if( !empty($mcta_image) ):?>
 							<div class="img-wrap">
-								<?=wp_get_attachment_image( $mcta_image['id'], 'large' );?>
+								<?=wp_get_attachment_image( $mcta_image['id'], 'large', false, ['class' => ''] );?>
+								
 							</div>
 						<?php endif;?>
 					</div>
@@ -44,12 +54,25 @@ if( !empty($mcta_pricepoint) || !empty($mcta_image) || !empty($mcta_heading) || 
 						$link_target = $mcta_button_link['target'] ? $mcta_button_link['target'] : '_self';
 						?>
 						<div class="cell shrink">
-							<a class="button mint-bg" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+							<a class="button <?=$btn_bg_color;?>" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 						</div>
 					<?php endif; ?>	
 				</div>
 			<?php endif;?> 
 		</div>
 	</div>
+	<?php if( !empty($mcta_disclaimer_copy) ):?>
+		<div class="disclaimer">
+			<div class="grid-container extended">
+				<div class="grid-x grid-padding-x">
+					<div class="cell small-12">
+						<div class="light-blue-bg">
+							<?=wp_kses_post($mcta_disclaimer_copy);?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php endif;?>
 </section>	
 <?php endif;?>

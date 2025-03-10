@@ -15,6 +15,14 @@ footer.footer {
 		.footer-logo {
 			max-width: 360px;
 		}
+		.ahdam-about {
+			padding-top: rem-calc(40);
+			.heading {
+				text-transform: uppercase;
+				font-size: rem-calc(15);
+				padding-bottom: rem-calc(7);
+			}
+		}
 	}
 	h3 {
 		font-size: rem-calc(14);
@@ -126,5 +134,9 @@ footer.footer {
 		margin-bottom: 1.8rem;	
 	}
 	
+}
+
+.brand-ahdam {
+	.footer-h3.mint {}
 }
 

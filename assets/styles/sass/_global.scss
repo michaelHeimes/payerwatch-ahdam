@@ -35,6 +35,10 @@ Stylesheet: Global Stylesheet
 		@extend .small-12;
 	}
 }
+
+.grid-container.extended {
+	max-width: 85rem;
+}
 /*********************
 BACKGROUND COLORS
 *********************/

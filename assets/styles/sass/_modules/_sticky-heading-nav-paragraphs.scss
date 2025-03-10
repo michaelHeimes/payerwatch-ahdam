@@ -3,6 +3,9 @@
 	padding-bottom: 7rem;
 	margin-top: 3.5rem;
 	margin-bottom: 3.5rem;
+	&.remove-top-spacing-1 {
+		margin-top: 0;
+	}
 	.block {
 		h3 {
 			font-weight: 600;
@@ -100,5 +103,11 @@
 			
 		}
 		
+	}
+}
+
+.brand-ahdam {
+	.sticky-heading-nav-paragraphs .nav-wrap a.is-active:before {
+		background-color: $brand-violet;
 	}
 }
