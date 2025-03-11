@@ -1304,6 +1304,64 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_67d0564df0ecc": {
+                    "key": "layout_67d0564df0ecc",
+                    "name": "latest_industry_news_knowledge_center",
+                    "label": "Latest Industry News \/ Knowledge Center",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67d05685f0ece",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "This module shows the two latest Industry News and Knowledge Center posts.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_67d03ffbbcd0e": {
+                    "key": "layout_67d03ffbbcd0e",
+                    "name": "upcoming_webinars",
+                    "label": "Upcoming Webinars",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67d03ffbbcd0f",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_62081df8a20e5": {
                     "key": "layout_62081df8a20e5",
                     "name": "image_copy_button_cards",
@@ -2657,5 +2715,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741628176
+    "modified": 1741706919
 }

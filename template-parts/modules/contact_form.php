@@ -2,6 +2,7 @@
 if(!defined('ABSPATH')) {
 	exit;
 }
+$address = get_field('address', 'option') ?? null;
 $directions_url = get_field('directions_url', 'option') ?? null;
 $email_address = get_field('email_address', 'option') ?? null;
 $phone_number = get_field('phone_number', 'option') ?? null;
@@ -25,7 +26,7 @@ if( empty($form_id) ) {
 									<?php if( !empty( $directions_url ) ):?>
 										<div>
 											<a href="<?=esc_url($directions_url);?>" target="_blank">
-												<?=esc_html( $directions_url );?>
+												<?=wp_kses_post( $address );?>
 											</a>
 										</div>
 									<?php endif;?>

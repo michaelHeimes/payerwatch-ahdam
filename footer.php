@@ -42,8 +42,8 @@
 								</ul>
 								<?php if(  $theme_brand == 'ahdam' && !empty(  $footer_about_text ) ):?>
 									<div class="ahdam-about">
-										<div class="heading violet">
-											<h3>About</h3>
+										<div class="heading">
+											<h3 class="<?=$heading_color;?>">About</h3>
 										</div>
 										<?=wp_kses_post($footer_about_text);?>
 									</div>

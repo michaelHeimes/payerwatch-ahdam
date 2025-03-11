@@ -1,0 +1,28 @@
+.latest-news-knowledge {
+	padding-top: 3.5rem;
+	padding-bottom: 3.5rem;
+	@include breakpoint(medium) {
+		padding-top: rem-calc(75);
+		padding-bottom: rem-calc(75);
+	}
+	.tabs {
+		margin-bottom: rem-calc(40);
+		border: 0;
+		.tabs-title > .button {
+
+		}
+	}
+	.tabs-content {
+		border: 0;
+		.see-all-link {
+			text-transform: uppercase;
+			font-family: $header-font-family;
+			color: $brand-navy;
+			font-size: rem-calc(15);
+			transition: color .25s ease;
+			&:hover {
+				color: $brand-violet;
+			}
+		}
+	}
+}

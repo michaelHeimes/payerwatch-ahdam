@@ -5,8 +5,10 @@ button.close-button {
 a.wp-block-button__link,
 button, 
 a.button,
-.gform_button {
-	&:not([role="tab"]):not(.close-button):not(.enlarge-btn) {
+.button,
+.gform_button,
+body .tabs > .tabs-title > .button {
+	&:not(.team-dot):not(.close-button):not(.enlarge-btn) {
 		line-height: 1;
 		padding: 1em 2.7223em;
 		border-radius: 0;
@@ -70,7 +72,16 @@ a.button,
 			}
 		
 		}
-		
+		&.white-outline {
+			background: transparent;
+			border: 2px solid $white;
+			color: $white;
+		}
+		&.navy-outline {
+			background: transparent;
+			border: 2px solid $brand-navy;
+			color: $brand-navy;
+		}
 		&.large {
 			display: inline-flex;
 			padding: 0;

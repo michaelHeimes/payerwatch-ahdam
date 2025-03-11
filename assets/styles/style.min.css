@@ -5154,6 +5154,92 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   padding-bottom: 56.25%;
 }
 
+.tabs {
+  margin: 0;
+  border: 1px solid #e6e6e6;
+  background: #ffffff;
+  list-style-type: none;
+}
+.tabs::before, .tabs::after {
+  display: table;
+  content: " ";
+  -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+.tabs::after {
+  clear: both;
+}
+
+.tabs.vertical > li {
+  display: block;
+  float: none;
+  width: auto;
+}
+
+.tabs.simple > li > a {
+  padding: 0;
+}
+.tabs.simple > li > a:hover {
+  background: transparent;
+}
+
+.tabs.primary {
+  background: #201dd0;
+}
+.tabs.primary > li > a {
+  color: #ffffff;
+}
+.tabs.primary > li > a:hover, .tabs.primary > li > a:focus {
+  background: #1e1cc6;
+}
+
+.tabs-title {
+  float: left;
+}
+.tabs-title > a {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  font-size: 0.9375rem;
+  line-height: 1;
+  color: #201dd0;
+}
+[data-whatinput=mouse] .tabs-title > a {
+  outline: 0;
+}
+.tabs-title > a:hover {
+  background: #ffffff;
+  color: #1c19b3;
+}
+.tabs-title > a:focus, .tabs-title > a[aria-selected=true] {
+  background: #e6e6e6;
+  color: #201dd0;
+}
+
+.tabs-content {
+  border: 1px solid #e6e6e6;
+  border-top: 0;
+  background: #ffffff;
+  color: #050D57;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.tabs-content.vertical {
+  border: 1px solid #e6e6e6;
+  border-left: 0;
+}
+
+.tabs-panel {
+  display: none;
+  padding: 0;
+}
+.tabs-panel.is-active {
+  display: block;
+}
+
 .menu {
   padding: 0;
   margin: 0;
@@ -9550,10 +9636,12 @@ button.close-button {
   margin-bottom: 1.5rem;
 }
 
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn),
-button:not([role=tab]):not(.close-button):not(.enlarge-btn),
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn),
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn) {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn),
+button:not(.team-dot):not(.close-button):not(.enlarge-btn),
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn),
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn),
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn),
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn) {
   line-height: 1;
   padding: 1em 2.7223em;
   border-radius: 0;
@@ -9564,20 +9652,26 @@ a.button:not([role=tab]):not(.close-button):not(.enlarge-btn),
   -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn):hover,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn):hover,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn):hover,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn):hover {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn):hover,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn):hover,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn):hover,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn):hover,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn):hover,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn):hover {
   color: #201dd0;
   border-color: #201dd0;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).post-btn, a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn)[type=submit],
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).post-btn,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn)[type=submit],
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).post-btn,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn)[type=submit],
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).post-btn,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn)[type=submit] {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).post-btn, a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn)[type=submit],
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).post-btn,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn)[type=submit],
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).post-btn,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn)[type=submit],
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).post-btn,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn)[type=submit],
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).post-btn,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn)[type=submit],
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).post-btn,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn)[type=submit] {
   width: 100%;
   font-size: 1.5rem;
   line-height: 1;
@@ -9585,65 +9679,103 @@ a.button:not([role=tab]):not(.close-button):not(.enlarge-btn)[type=submit],
   background-color: #00fab8;
   border-color: #00fab8;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).post-btn:hover, a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn)[type=submit]:hover,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).post-btn:hover,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn)[type=submit]:hover,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).post-btn:hover,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn)[type=submit]:hover,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).post-btn:hover,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn)[type=submit]:hover {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).post-btn:hover, a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn)[type=submit]:hover,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).post-btn:hover,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn)[type=submit]:hover,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).post-btn:hover,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn)[type=submit]:hover,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).post-btn:hover,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn)[type=submit]:hover,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).post-btn:hover,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn)[type=submit]:hover,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).post-btn:hover,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn)[type=submit]:hover {
   background-color: #00E37B;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).mint-bg,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).mint-bg,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).mint-bg,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).mint-bg {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).mint-bg,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).mint-bg,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).mint-bg,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).mint-bg,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).mint-bg,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).mint-bg {
   border-color: #00fab8;
   background-color: #00fab8;
   color: #050D57;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).mint-bg:hover,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).mint-bg:hover,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).mint-bg:hover,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).mint-bg:hover {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).mint-bg:hover,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).mint-bg:hover,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).mint-bg:hover,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).mint-bg:hover,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).mint-bg:hover,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).mint-bg:hover {
   border-color: #00e37b;
   background-color: #00e37b;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).royal-bg,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).royal-bg,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).royal-bg,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).royal-bg {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).royal-bg,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).royal-bg,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).royal-bg,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).royal-bg,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).royal-bg,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).royal-bg {
   border-color: #201dd0;
   background-color: #201dd0;
   color: #ffffff;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).royal-bg:hover,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).royal-bg:hover,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).royal-bg:hover,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).royal-bg:hover {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).royal-bg:hover,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).royal-bg:hover,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).royal-bg:hover,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).royal-bg:hover,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).royal-bg:hover,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).royal-bg:hover {
   border-color: #051498;
   background-color: #051498;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).violet-bg,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).violet-bg,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).violet-bg,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).violet-bg,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).violet-bg,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).violet-bg {
   border-color: #c84dff;
   background-color: #c84dff;
   color: #050D57;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg:hover,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg:hover,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg:hover,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).violet-bg:hover {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).violet-bg:hover,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).violet-bg:hover,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).violet-bg:hover,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).violet-bg:hover,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).violet-bg:hover,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).violet-bg:hover {
   border-color: #201dd0;
   background-color: #201dd0;
   color: #ffffff;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).large,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).large,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).large,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).large {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).white-outline,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).white-outline,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).white-outline,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).white-outline,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).white-outline,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).white-outline {
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).navy-outline,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).navy-outline,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).navy-outline,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).navy-outline,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).navy-outline,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).navy-outline {
+  background: transparent;
+  border: 2px solid #050D57;
+  color: #050D57;
+}
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).large,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).large,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).large,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).large {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -9655,25 +9787,31 @@ a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).large,
   border: 0;
   position: relative;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).large span,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).large span,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span {
   position: relative;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.gradient,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.gradient,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.gradient,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.gradient {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.gradient,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.gradient,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.gradient,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.gradient,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.gradient,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.gradient {
   display: block;
   padding: 1.375rem 4.05rem 1.375rem 1.8312rem;
   background-image: -webkit-gradient(linear, right top, left top, from(rgb(27, 17, 149)), to(rgb(48, 36, 221)));
   background-image: linear-gradient(-90deg, rgb(27, 17, 149) 0%, rgb(48, 36, 221) 100%);
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.gradient:before,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.gradient:before,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.gradient:before,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.gradient:before {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.gradient:before,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.gradient:before,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.gradient:before,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.gradient:before,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.gradient:before,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.gradient:before {
   content: "";
   position: absolute;
   top: 0;
@@ -9687,10 +9825,12 @@ a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.gradien
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.arrow,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.arrow,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.arrow,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.arrow {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.arrow,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.arrow,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.arrow,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.arrow,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.arrow,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.arrow {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9708,23 +9848,29 @@ a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.arrow,
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.text,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.text,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.text,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).large span.text {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.text,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.text,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.text,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.text,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.text,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).large span.text {
   position: relative;
   z-index: 1;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).large:hover span.gradient:before,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).large:hover span.gradient:before,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).large:hover span.gradient:before,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).large:hover span.gradient:before {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).large:hover span.gradient:before,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).large:hover span.gradient:before,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large:hover span.gradient:before,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large:hover span.gradient:before,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).large:hover span.gradient:before,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).large:hover span.gradient:before {
   opacity: 0;
 }
-a.wp-block-button__link:not([role=tab]):not(.close-button):not(.enlarge-btn).large:hover .arrow,
-button:not([role=tab]):not(.close-button):not(.enlarge-btn).large:hover .arrow,
-a.button:not([role=tab]):not(.close-button):not(.enlarge-btn).large:hover .arrow,
-.gform_button:not([role=tab]):not(.close-button):not(.enlarge-btn).large:hover .arrow {
+a.wp-block-button__link:not(.team-dot):not(.close-button):not(.enlarge-btn).large:hover .arrow,
+button:not(.team-dot):not(.close-button):not(.enlarge-btn).large:hover .arrow,
+a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large:hover .arrow,
+.button:not(.team-dot):not(.close-button):not(.enlarge-btn).large:hover .arrow,
+.gform_button:not(.team-dot):not(.close-button):not(.enlarge-btn).large:hover .arrow,
+body .tabs > .tabs-title > .button:not(.team-dot):not(.close-button):not(.enlarge-btn).large:hover .arrow {
   background-color: #00e37b;
 }
 
@@ -10595,7 +10741,7 @@ article.post-archive-card .inner {
 }
 @media print, screen and (min-width: 40em) {
   article.post-archive-card .inner {
-    padding: 3.4rem 2.5rem 1.15rem;
+    padding: 3.4rem 2.5rem 2rem;
   }
 }
 article.post-archive-card .inner svg g,
@@ -10611,25 +10757,21 @@ article.post-archive-card .inner svg:hover path {
 }
 article.post-archive-card .inner a {
   width: 100%;
+  height: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 article.post-archive-card .inner footer.article-footer {
-  padding-top: 2.65rem;
+  padding-top: 2rem;
 }
 @media print, screen and (min-width: 40em) {
   article.post-archive-card .inner footer.article-footer {
-    padding-top: 4.65rem;
+    padding-top: 2.5rem;
   }
 }
 article.post-archive-card .inner .archive-tag {
-  padding-bottom: 1.1rem;
-}
-@media print, screen and (min-width: 40em) {
-  article.post-archive-card .inner .archive-tag {
-    padding-bottom: 2.1rem;
-  }
+  padding-bottom: 1rem;
 }
 article.post-archive-card .inner .entry-content {
   padding-bottom: 1.1rem;
@@ -10644,6 +10786,13 @@ article.post-archive-card .inner.navy-bg:hover {
 }
 article.post-archive-card .inner.violet-bg:hover {
   background-color: #9123F0;
+}
+
+.brand-ahdam article.post-archive-card .inner .archive-tag.mint {
+  text-transform: uppercase;
+  font-size: 0.9375rem;
+  color: #c84dff !important;
+  font-family: din-2014, Helvetica, Roboto, Arial, sans-serif;
 }
 
 .team-preview {
@@ -11807,6 +11956,10 @@ article.post-archive-card .inner.violet-bg:hover {
   fill: #201dd0;
 }
 
+.brand-ahdam.archive main {
+  padding-bottom: 3rem;
+}
+
 .events.module {
   padding-top: 3.7rem;
   padding-bottom: 4.45rem;
@@ -12145,5 +12298,82 @@ article.event-card a:hover svg {
 }
 .membership-cta.module .disclaimer .light-blue-bg {
   padding: 1.75rem 3.2rem;
+}
+
+.upcoming-webinars.module {
+  padding-top: 3.7rem;
+  padding-bottom: 4.45rem;
+}
+@media print, screen and (min-width: 40em) {
+  .upcoming-webinars.module {
+    padding-top: 4.7rem;
+    padding-bottom: 6.45rem;
+  }
+}
+.upcoming-webinars.module h2 {
+  margin-bottom: 0.58em;
+}
+
+article.event-card {
+  margin-bottom: 1.75rem;
+}
+article.event-card .date {
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.9rem;
+}
+article.event-card .date .bg {
+  -webkit-transform: skew(-27.2deg) translateX(-15px);
+          transform: skew(-27.2deg) translateX(-15px);
+}
+article.event-card .date span {
+  font-weight: bold;
+  position: relative;
+}
+article.event-card h3 {
+  font-weight: 400;
+}
+article.event-card .vm-link {
+  font-family: din-2014, Helvetica, Roboto, Arial, sans-serif;
+  -webkit-transition: color 0.25s ease;
+  transition: color 0.25s ease;
+}
+article.event-card .vm-link span {
+  font-size: 0.9375rem;
+  margin-right: 1.1rem;
+}
+article.event-card footer {
+  padding-top: 1.05rem;
+}
+article.event-card a:hover .vm-link {
+  color: #c84dff;
+}
+
+.latest-news-knowledge {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+@media print, screen and (min-width: 40em) {
+  .latest-news-knowledge {
+    padding-top: 4.6875rem;
+    padding-bottom: 4.6875rem;
+  }
+}
+.latest-news-knowledge .tabs {
+  margin-bottom: 2.5rem;
+  border: 0;
+}
+.latest-news-knowledge .tabs-content {
+  border: 0;
+}
+.latest-news-knowledge .tabs-content .see-all-link {
+  text-transform: uppercase;
+  font-family: din-2014, Helvetica, Roboto, Arial, sans-serif;
+  color: #050D57;
+  font-size: 0.9375rem;
+  -webkit-transition: color 0.25s ease;
+  transition: color 0.25s ease;
+}
+.latest-news-knowledge .tabs-content .see-all-link:hover {
+  color: #c84dff;
 }
 /*# sourceMappingURL=style.min.css.map */

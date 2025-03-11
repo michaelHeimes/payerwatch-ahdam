@@ -10,7 +10,7 @@ article.post-archive-card {
 		transition: background-color .3s ease;
 		
 		@include breakpoint(medium) {
-			padding: 3.4rem 2.5rem 1.15rem;
+			padding: 3.4rem 2.5rem 2rem;
 		}
 		
 		svg {
@@ -32,21 +32,19 @@ article.post-archive-card {
 		
 		a {
 			width: 100%;
+			height: 100%;
 			justify-content: space-between;
 		}
 		
 		footer.article-footer {
-			padding-top: 2.65rem;
+			padding-top: 2rem;
 			@include breakpoint(medium) {
-				padding-top: 4.65rem;
+				padding-top: 2.5rem;
 			}
 		}
 		
 		.archive-tag {
-		    padding-bottom: 1.1rem;
-		    @include breakpoint(medium) {
-			    padding-bottom: 2.1rem;
-		    }
+		    padding-bottom: 1rem;
 		}
 		
 		.entry-content {
@@ -66,4 +64,13 @@ article.post-archive-card {
 		
 	}
 	
+}
+
+.brand-ahdam {
+	article.post-archive-card .inner .archive-tag.mint {
+		text-transform: uppercase;
+		font-size: rem-calc(15);
+		color: $brand-violet !important;
+		font-family: $header-font-family;
+	}
 }

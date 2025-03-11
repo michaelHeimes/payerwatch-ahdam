@@ -6,6 +6,7 @@
             "key": "field_621fd8b53332c",
             "label": "Event Date",
             "name": "event_date",
+            "aria-label": "",
             "type": "date_picker",
             "instructions": "",
             "required": 0,
@@ -15,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "display_format": "d\/m\/Y",
+            "display_format": "m\/d\/Y",
             "return_format": "Ymd",
             "first_day": 1
         },
@@ -23,6 +24,7 @@
             "key": "field_621fd97bf640d",
             "label": "Event Card Excerpt",
             "name": "event_card_excerpt",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -57,5 +59,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1646256602
+    "modified": 1741700671
 }

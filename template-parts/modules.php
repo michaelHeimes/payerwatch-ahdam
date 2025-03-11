@@ -102,6 +102,14 @@ if(!defined('ABSPATH')) {
 	
 	get_template_part('template-parts/modules/membership_cta');
 	
+	elseif ( get_row_layout() == 'upcoming_webinars' ) : 
+	
+	get_template_part('template-parts/modules/upcoming_webinars');
+	
+	elseif ( get_row_layout() == 'latest_industry_news_knowledge_center' ) : 
+	
+	get_template_part('template-parts/modules/latest_industry_news_knowledge_center');
+	
 	endif;?>
 	
 <?php endwhile;?>

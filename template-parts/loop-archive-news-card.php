@@ -4,6 +4,7 @@
  *
  * Used for single, index, archive, search.
  */
+ $tag_override = $args['tag_override'] ?? null;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-archive-card cell small-12 medium-6'); ?> role="article">		
@@ -11,7 +12,13 @@
 		<a class="fh white grid-x flex-dir-column" href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
 			<div>
 				<header class="article-header">
-					<div class="archive-tag mint">News</div>
+					<div class="archive-tag mint">
+						<?php if( $tag_override ):?>
+							<?=$tag_override;?>
+						<?php else:?>
+							News
+						<?php endif;?>
+					</div>
 					<h2 class="white"><?php the_title(); ?></h2>
 				</header> <!-- end article header -->
 								
@@ -25,20 +32,10 @@
 			</div>
 			
 			<div>				
-				<footer class="article-footer text-right">
-					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
-					  <defs>
-					    <clipPath id="clip-path">
-					      <rect width="16" height="15.999" fill="none"/>
-					    </clipPath>
-					  </defs>
-					  <g id="Group_1187" data-name="Group 1187" transform="translate(-4376 -2216)">
-					    <circle id="Ellipse_16" data-name="Ellipse 16" cx="15" cy="15" r="15" transform="translate(4376 2216)" fill="#00fab8"/>
-					    <g id="Component_28" data-name="Component 28" transform="translate(4383 2223)" clip-path="url(#clip-path)">
-					      <path id="Union_1" data-name="Union 1" d="M-4613,16V9h-7V7h7V0h2V7h7V9h-7v7Z" transform="translate(4620)" fill="#12058f"/>
-					    </g>
-					  </g>
-					</svg>
+				<footer class="article-footer">
+					<div class="button white-outline">
+						Read More
+					</div>
 				</footer> <!-- end article footer -->	
 			</div>
 		</a>

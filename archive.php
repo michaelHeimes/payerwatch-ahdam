@@ -1,57 +1,149 @@
 <?php
 /**
- * The template for displaying archive pages
+ * Template part for cpt archives
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package trailhead
  */
-
-get_header();
+ $theme_brand = get_field('theme_brand', 'option') ?? null;
+ 
+ $archive_object = get_queried_object();
+ $cpt_slug = $archive_object->name;
+ $taxonomy = get_object_taxonomies( $cpt_slug);
+ get_header();
+ if ( have_posts() ) :
 ?>
 
-	<main id="primary" class="site-main">
-		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
-				<div class="cell small-12">
-
-					<?php if ( have_posts() ) : ?>
-			
-						<header class="page-header">
-							<?php
-							the_archive_title( '<h1 class="page-title">', '</h1>' );
-							the_archive_description( '<div class="archive-description">', '</div>' );
-							?>
-						</header><!-- .page-header -->
-			
-						<?php
-						/* Start the Loop */
-						while ( have_posts() ) :
-							the_post();
-			
-							/*
-				 			* Include the Post-Type-specific template for the content.
-				 			* If you want to override this in a child theme, then include a file
-				 			* called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 			*/
-							get_template_part( 'template-parts/content', get_post_type() );
-			
-						endwhile;
-			
-						the_posts_navigation();
-			
-					else :
-			
-						get_template_part( 'template-parts/content', 'none' );
-			
-					endif;
-					?>
-
-				</div>
-			</div>
-		</div>
-	</main><!-- #main -->
-
-<?php
-get_sidebar();
-get_footer();
+	<div class="content">
+		<?php get_template_part('template-parts/modules/page_banner');?>
+		<div class="inner-content">
+		
+			<main class="main" role="main">
+				<?php if(  $theme_brand == 'payerwatch' ):?>
+					<div class="grid-x grid-padding-x">
+						<div class="cell small-12 tablet-10 tablet-offset-1">
+							<div class="filter-buttons-container grid-container fluid insights-cards-wrap">
+								<ul class="filter-buttons menu grid-x grid-padding-x align-middle">
+									<?php if (!is_post_type_archive('expert')):?>
+								
+										<?php if (is_post_type_archive('news')):?>
+											<li class="cell shrink"><a class="button solid mint-bg small" href="/news">All News</a></li>
+										<?php endif;?>
+										<?php if (is_post_type_archive('webinar')):?>
+											<li class="cell shrink"><a class="button solid mint-bg small" href="/news">All Webinars</a></li>
+										<?php endif;?>
+										<?php if (is_post_type_archive('interview')):?>
+											<li class="cell shrink"><a class="button solid mint-bg small" href="/news">All Interviews</a></li>
+										<?php endif;?>
+										
+									<?php endif;?>
+																		
+									<?php
+										if ($taxonomy) {
+										
+											$current_tax = get_queried_object();
+											$current_tax_id = $current_tax->term_id;
+																		
+											$args = array(
+												'post_type' => $cpt_slug,
+												'taxonomy' =>  $taxonomy,
+												'hide_empty' => true,
+											);
+											$terms = get_terms($args);
+				
+											foreach ($terms as $term): $term_link = get_term_link($term);?>
+												<li class="cell shrink"><a class="button outline small" href="<?php echo $term_link;?>"><?php echo $term->name;?></a></li>
+											<?php endforeach;
+										}
+										
+										if (is_post_type_archive('interview')) {
+											$args = array(  
+												'post_type' => 'interview',
+												'post_status' => 'publish',
+												'posts_per_page' => -1,
+												'orderby' => 'title',
+												'order' => 'ASC'
+											);
+											
+											$loop = new WP_Query( $args ); 
+											
+											if ( $loop->have_posts() ) : 
+												
+												while ( $loop->have_posts() ) : $loop->the_post();
+												
+												$expert = get_field('select_expert');
+												$expert_name = get_the_title( $expert->ID );
+												$permalink = get_permalink( $expert->ID );
+												$expert_first_name = str_word_count( $expert_name, 1);
+												
+												?>
+												
+													<li class="cell shrink"><a class="button outline small" href="<?php echo esc_url( $permalink ); ?>"><?php echo $expert_first_name[0];?></a></li>
+													
+												<?php endwhile;
+									
+											endif;
+											wp_reset_postdata(); 
+											
+										}
+										
+										
+									?>
+								</ul>
+							</div>
+						</div>
+					</div>
+				<?php endif;?>
+		
+				<?php if (have_posts()) : ?>
+					<div class="grid-container">
+						<div class="grid-x grid-padding-x">
+							<?php while (have_posts()) : the_post(); ?>
+								<!-- To see additional archive styles, visit the /parts directory -->
+								<?php 
+									if (is_post_type_archive('news')) {
+										get_template_part( 'template-parts/loop', 'archive-news-card' );
+									} elseif (is_post_type_archive('knowledge-center')) {
+										get_template_part( 'template-parts/loop', 'archive-news-card' );
+									} elseif (is_post_type_archive('webinar')) {
+										get_template_part( 'template-parts/loop', 'archive-webinar-card' );
+									} elseif (is_post_type_archive('interview')) {
+										get_template_part( 'template-parts/loop', 'archive-interview-card' );
+									} elseif (is_post_type_archive('expert')) {
+										get_template_part( 'template-parts/loop', 'archive-expert-card' );
+									} else {
+										get_template_part( 'template-parts/content', 'missing' );
+									}
+								?>
+							<?php endwhile; ?>	
+						</div>
+					</div>
+	
+					<div class="grid-container">
+						<div class="grid-x grid-padding-x">
+							<div class="cell">
+							<?php trailhead_page_navi(); ?>
+							</div>
+						</div>
+					</div>
+					
+				<?php else : ?>
+											
+					<?php get_template_part( 'template-parts/content', 'missing' ); ?>
+						
+				<?php endif; ?>
+				
+				<?php if(  $theme_brand == 'payerwatch' ):?>
+					
+					<?php get_template_part('template-parts/modules/trusted_partners');?>
+					
+					<?php get_template_part('template-parts/modules/blue_background_cta');?>	
+				
+				<?php endif; ?>			
+					
+			</main> <!-- end #main -->
+	
+		
+		</div> <!-- end #inner-content -->
+		
+	</div> <!-- end #content -->	
+	
+<?php endif; get_footer(); ?>

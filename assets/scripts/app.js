@@ -32,7 +32,7 @@
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.abide.js
 
 // Tabs UI
-//@*prepros-prepend vendor/foundation/js/plugins/foundation.tabs.js
+//@prepros-prepend vendor/foundation/js/plugins/foundation.tabs.js
 
 // Accordion
 //@*prepros-prepend vendor/foundation/js/plugins/foundation.accordion.js
