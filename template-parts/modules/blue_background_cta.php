@@ -3,6 +3,12 @@ if(!defined('ABSPATH')) {
 	exit;
 }
 
+$dev_tools_element_class = sanitize_title(get_sub_field('dev_tools_element_class')) ?? null;
+$dev_tools_element_id = get_sub_field('dev_tools_element_id') ?? null;
+if (!empty($dev_tools_element_id)) {
+	$dev_tools_element_id = 'id="' . esc_attr(sanitize_title($dev_tools_element_id)) . '"';
+}
+
 $source = get_sub_field('source') ?? null;
 
 if( $source == 'custom' ) {
@@ -24,7 +30,7 @@ if( $theme_brand = 'ahdam' ) {
 }
 
 ?>
-<section class="blue-background-cta module blue-bg color-bg">
+<section <?=$dev_tools_element_id;?>class="blue-background-cta module blue-bg color-bg <?=esc_attr($dev_tools_element_class);?>">
 	<div class="grid-container<?php if( $source == 'custom') { echo ' extended'; }?>">
 		<div class="grid-x grid-padding-x">
 			<div class="cell small-12">

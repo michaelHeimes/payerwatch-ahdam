@@ -2,6 +2,13 @@
 if(!defined('ABSPATH')) {
 	exit;
 }
+
+$dev_tools_element_class = sanitize_title(get_sub_field('dev_tools_element_class')) ?? null;
+$dev_tools_element_id = get_sub_field('dev_tools_element_id') ?? null;
+if (!empty($dev_tools_element_id)) {
+	$dev_tools_element_id = 'id="' . esc_attr(sanitize_title($dev_tools_element_id)) . '"';
+}
+
 $address = get_field('address', 'option') ?? null;
 $directions_url = get_field('directions_url', 'option') ?? null;
 $email_address = get_field('email_address', 'option') ?? null;
@@ -12,7 +19,7 @@ if( empty($form_id) ) {
 	$form_id = 1;
 }
 ?>
-<section class="contact-form module has-bg">
+<section <?=$dev_tools_element_id;?>class="contact-form module has-bg <?=esc_attr($dev_tools_element_class);?>">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			<div class="cell small-12 tablet-10 tablet-offset-1">

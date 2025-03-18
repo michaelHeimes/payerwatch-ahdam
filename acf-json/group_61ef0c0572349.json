@@ -298,18 +298,18 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_62004012604f1": {
-                    "key": "layout_62004012604f1",
-                    "name": "appeal_letter_template",
-                    "label": "Lead Capture",
+                "layout_67d6efa753085": {
+                    "key": "layout_67d6efa753085",
+                    "name": "anchor_links",
+                    "label": "Anchor Links",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_6200402c604f2",
-                            "label": "",
-                            "name": "",
+                            "key": "field_67d6f05e53087",
+                            "label": "Links",
+                            "name": "links",
                             "aria-label": "",
-                            "type": "message",
+                            "type": "repeater",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -318,97 +318,56 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "This module is edited in <a href=\"\/wp-admin\/admin.php?page=theme-options\"><u>Theme Settings<\/u><\/a>",
-                            "new_lines": "wpautop",
-                            "esc_html": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_62070c2a8ec33": {
-                    "key": "layout_62070c2a8ec33",
-                    "name": "book_a_demo",
-                    "label": "Book a Demo",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_62070c358ec34",
-                            "label": "Video URL",
-                            "name": "video_url",
-                            "aria-label": "",
-                            "type": "oembed",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "width": "",
-                            "height": ""
-                        },
-                        {
-                            "key": "field_62070c748ec35",
-                            "label": "Copy",
-                            "name": "copy",
-                            "aria-label": "",
-                            "type": "wysiwyg",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 1,
-                            "delay": 0
-                        },
-                        {
-                            "key": "field_62070cf28ec36",
-                            "label": "Skewed Image",
-                            "name": "skewed_image",
-                            "aria-label": "",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "50",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        },
-                        {
-                            "key": "field_62070cfd8ec37",
-                            "label": "Button Link",
-                            "name": "button_link",
-                            "aria-label": "",
-                            "type": "link",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "50",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array"
+                            "layout": "table",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Anchor Link",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_67d703b4dc0ad",
+                                    "label": "Link Title",
+                                    "name": "link_title",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_67d6f05e53087"
+                                },
+                                {
+                                    "key": "field_67d6f06f53088",
+                                    "label": "Element ID",
+                                    "name": "element_id",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "Enter a word or words that are all lowercase and doesn't have spaces ex: <code>policies-procedures<\/code> that matches the text entered in the ID field of the element.",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_67d6f05e53087"
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -548,6 +507,28 @@
                                 "id": ""
                             },
                             "return_format": "array"
+                        },
+                        {
+                            "key": "field_67d6f5dc294b7",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -643,6 +624,28 @@
                             "toolbar": "full",
                             "media_upload": 1,
                             "delay": 0
+                        },
+                        {
+                            "key": "field_67d6f5ff294b9",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -790,6 +793,138 @@
                                     "return_format": "array"
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_67d6f612294ba",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_62070c2a8ec33": {
+                    "key": "layout_62070c2a8ec33",
+                    "name": "book_a_demo",
+                    "label": "Book a Demo",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_62070c358ec34",
+                            "label": "Video URL",
+                            "name": "video_url",
+                            "aria-label": "",
+                            "type": "oembed",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "width": "",
+                            "height": ""
+                        },
+                        {
+                            "key": "field_62070c748ec35",
+                            "label": "Copy",
+                            "name": "copy",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_62070cf28ec36",
+                            "label": "Skewed Image",
+                            "name": "skewed_image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_62070cfd8ec37",
+                            "label": "Button Link",
+                            "name": "button_link",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
+                        {
+                            "key": "field_67d6f5ba294b5",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -842,6 +977,28 @@
                             "step": "",
                             "prepend": "",
                             "append": ""
+                        },
+                        {
+                            "key": "field_67d6f5ee294b8",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -1239,21 +1396,66 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                            "key": "field_67d6f5cc294b6",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
                     "max": ""
                 },
-                "layout_67cf225b919a0": {
-                    "key": "layout_67cf225b919a0",
-                    "name": "disclaimer",
-                    "label": "Disclaimer",
+                "layout_67d839c5f20d7": {
+                    "key": "layout_67d839c5f20d7",
+                    "name": "copy_download_buttons_and_image",
+                    "label": "Copy, Download Buttons and Image",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_67cf2262919a2",
+                            "key": "field_67d839c5f20d9",
+                            "label": "Orientation",
+                            "name": "orientation",
+                            "aria-label": "",
+                            "type": "button_group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "copy-left": "Copy Left",
+                                "copy-right": "Copy Right"
+                            },
+                            "default_value": "",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "layout": "horizontal"
+                        },
+                        {
+                            "key": "field_67d839c5f20db",
                             "label": "Copy",
-                            "name": "disclaimer_copy",
+                            "name": "copy",
                             "aria-label": "",
                             "type": "wysiwyg",
                             "instructions": "",
@@ -1266,9 +1468,193 @@
                             },
                             "default_value": "",
                             "tabs": "all",
-                            "toolbar": "basic",
-                            "media_upload": 0,
+                            "toolbar": "full",
+                            "media_upload": 1,
                             "delay": 0
+                        },
+                        {
+                            "key": "field_67d839c5f20dd",
+                            "label": "Download Button 1",
+                            "name": "download_button_1",
+                            "aria-label": "",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61ef682c4faa4",
+                                        "operator": "!=empty"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_67d83f4eab557",
+                                    "label": "Button Text",
+                                    "name": "button_text",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_67d83f5dab558",
+                                    "label": "File",
+                                    "name": "file",
+                                    "aria-label": "",
+                                    "type": "file",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "url",
+                                    "library": "all",
+                                    "min_size": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_67d83f87123d2",
+                            "label": "Download Button 2",
+                            "name": "download_button_2",
+                            "aria-label": "",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61ef682c4faa4",
+                                        "operator": "!=empty"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_67d83f87123d3",
+                                    "label": "Button Text",
+                                    "name": "button_text",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": ""
+                                },
+                                {
+                                    "key": "field_67d83f87123d4",
+                                    "label": "File",
+                                    "name": "file",
+                                    "aria-label": "",
+                                    "type": "file",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "url",
+                                    "library": "all",
+                                    "min_size": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_67d839c5f20e1",
+                            "label": "Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_61ef682c4faa4",
+                                        "operator": "!=empty"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "preview_size": "thumbnail"
+                        },
+                        {
+                            "key": "field_67d839c5f20e8",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -1299,232 +1685,28 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_67d0564df0ecc": {
-                    "key": "layout_67d0564df0ecc",
-                    "name": "latest_industry_news_knowledge_center",
-                    "label": "Latest Industry News \/ Knowledge Center",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_67d05685f0ece",
-                            "label": "",
-                            "name": "",
-                            "aria-label": "",
-                            "type": "message",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "This module shows the two latest Industry News and Knowledge Center posts.",
-                            "new_lines": "wpautop",
-                            "esc_html": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_67d03ffbbcd0e": {
-                    "key": "layout_67d03ffbbcd0e",
-                    "name": "upcoming_webinars",
-                    "label": "Upcoming Webinars",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_67d03ffbbcd0f",
-                            "label": "Heading",
-                            "name": "heading",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "maxlength": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_62081df8a20e5": {
-                    "key": "layout_62081df8a20e5",
-                    "name": "image_copy_button_cards",
-                    "label": "Image, Copy, Button Link Cards",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_62081e04a20e6",
-                            "label": "Left Card",
-                            "name": "left_card",
-                            "aria-label": "",
-                            "type": "group",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "50",
-                                "class": "",
-                                "id": ""
-                            },
-                            "layout": "block",
-                            "sub_fields": [
-                                {
-                                    "key": "field_62081e21a20e7",
-                                    "label": "Image",
-                                    "name": "image",
-                                    "aria-label": "",
-                                    "type": "image",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array",
-                                    "preview_size": "medium",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": ""
-                                },
-                                {
-                                    "key": "field_62081e29a20e8",
-                                    "label": "Copy",
-                                    "name": "copy",
-                                    "aria-label": "",
-                                    "type": "wysiwyg",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 1,
-                                    "delay": 0
-                                },
-                                {
-                                    "key": "field_62081e33a20e9",
-                                    "label": "Button Link",
-                                    "name": "button_link",
-                                    "aria-label": "",
-                                    "type": "link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": ""
-                                }
-                            ]
                         },
                         {
-                            "key": "field_62081e985cf7e",
-                            "label": "Right Card",
-                            "name": "right_card",
+                            "key": "field_67d6f675294bc",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
                             "aria-label": "",
-                            "type": "group",
+                            "type": "clone",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "50",
+                                "width": "",
                                 "class": "",
                                 "id": ""
                             },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
                             "layout": "block",
-                            "sub_fields": [
-                                {
-                                    "key": "field_62081e985cf7f",
-                                    "label": "Image",
-                                    "name": "image",
-                                    "aria-label": "",
-                                    "type": "image",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array",
-                                    "preview_size": "medium",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": ""
-                                },
-                                {
-                                    "key": "field_62081e985cf80",
-                                    "label": "Copy",
-                                    "name": "copy",
-                                    "aria-label": "",
-                                    "type": "wysiwyg",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "tabs": "all",
-                                    "toolbar": "full",
-                                    "media_upload": 1,
-                                    "delay": 0
-                                },
-                                {
-                                    "key": "field_62081e985cf81",
-                                    "label": "Button Link",
-                                    "name": "button_link",
-                                    "aria-label": "",
-                                    "type": "link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array"
-                                }
-                            ]
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -1760,6 +1942,634 @@
                                     "maxlength": ""
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_67d6f6b8294c0",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_63e51829cc336": {
+                    "key": "layout_63e51829cc336",
+                    "name": "icons_labels",
+                    "label": "Icons w\/ Labels",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_63e53a0e74849",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_63e52f2687631",
+                            "label": "Icons w\/ Labels",
+                            "name": "icons_w_labels",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "block",
+                            "button_label": "Add Column",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_63e51843cc337",
+                                    "label": "Icon",
+                                    "name": "icon",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "33",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "preview_size": "thumbnail",
+                                    "parent_repeater": "field_63e52f2687631"
+                                },
+                                {
+                                    "key": "field_63e52cb0fbf86",
+                                    "label": "FontAwesome Icon",
+                                    "name": "fontawesome_icon",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "Copy and paste the code snippet from <a href=\"https:\/\/fontawesome.com\/search\" target=\"_blank\">FontAwesome Here<\/a>. The icons available are Solid and Regular (free not Pro).",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "33",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_63e52f2687631"
+                                },
+                                {
+                                    "key": "field_63e5184ecc338",
+                                    "label": "Label",
+                                    "name": "label",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "33",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_63e52f2687631"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_67d6f7b1294cb",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_62081df8a20e5": {
+                    "key": "layout_62081df8a20e5",
+                    "name": "image_copy_button_cards",
+                    "label": "Image, Copy, Button Link Cards",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_62081e04a20e6",
+                            "label": "Left Card",
+                            "name": "left_card",
+                            "aria-label": "",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_62081e21a20e7",
+                                    "label": "Image",
+                                    "name": "image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_62081e29a20e8",
+                                    "label": "Copy",
+                                    "name": "copy",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                },
+                                {
+                                    "key": "field_62081e33a20e9",
+                                    "label": "Button Link",
+                                    "name": "button_link",
+                                    "aria-label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": ""
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_62081e985cf7e",
+                            "label": "Right Card",
+                            "name": "right_card",
+                            "aria-label": "",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_62081e985cf7f",
+                                    "label": "Image",
+                                    "name": "image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_62081e985cf80",
+                                    "label": "Copy",
+                                    "name": "copy",
+                                    "aria-label": "",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "tabs": "all",
+                                    "toolbar": "full",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                },
+                                {
+                                    "key": "field_62081e985cf81",
+                                    "label": "Button Link",
+                                    "name": "button_link",
+                                    "aria-label": "",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_67d6f6aa294bf",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_67d0564df0ecc": {
+                    "key": "layout_67d0564df0ecc",
+                    "name": "latest_industry_news_knowledge_center",
+                    "label": "Latest Industry News \/ Knowledge Center",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67d05685f0ece",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "This module shows the two latest Industry News and Knowledge Center posts.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_67d6f68c294bd",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_67d72b47478c9": {
+                    "key": "layout_67d72b47478c9",
+                    "name": "latest_posts",
+                    "label": "Latest Posts",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67d72b47478cb",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "This module shows the two latest posts of the post type selected.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_67d73793acb2a",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_67d72b5d478cd",
+                            "label": "Post Types to Show",
+                            "name": "post_types_to_show",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Post Type",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_67d72b80478ce",
+                                    "label": "Post Type",
+                                    "name": "post_type",
+                                    "aria-label": "",
+                                    "type": "radio",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "knowledge-center": "Knowledge Center",
+                                        "news": "Industry News",
+                                        "newsletter": "Newsletters",
+                                        "whitepaper": "Whitepapers"
+                                    },
+                                    "default_value": "",
+                                    "return_format": "value",
+                                    "allow_null": 0,
+                                    "other_choice": 0,
+                                    "layout": "horizontal",
+                                    "save_other_choice": 0,
+                                    "parent_repeater": "field_67d72b5d478cd"
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_67d72b47478cc",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_62004012604f1": {
+                    "key": "layout_62004012604f1",
+                    "name": "appeal_letter_template",
+                    "label": "Lead Capture",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6200402c604f2",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "This module is edited in <a href=\"\/wp-admin\/admin.php?page=theme-options\"><u>Theme Settings<\/u><\/a>",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_67d6f172ff57d",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_67d03ffbbcd0e": {
+                    "key": "layout_67d03ffbbcd0e",
+                    "name": "upcoming_webinars",
+                    "label": "Upcoming Webinars",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67d03ffbbcd0f",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_67d6f69b294be",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -1788,6 +2598,54 @@
                             "message": "This is global element that can be edited in the <a href=\"\/wp-admin\/admin.php?page=theme-options\">Theme Options<\/a>",
                             "new_lines": "wpautop",
                             "esc_html": 0
+                        },
+                        {
+                            "key": "field_67d6f6cd294c1",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_67d6ee4653082": {
+                    "key": "layout_67d6ee4653082",
+                    "name": "member_dashboard_header",
+                    "label": "Member Dashboard Header",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67d6ef7353084",
+                            "label": "Update Profile Link",
+                            "name": "update_profile_link",
+                            "aria-label": "",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
                         }
                     ],
                     "min": "",
@@ -1930,6 +2788,28 @@
                                     "parent_repeater": "field_620045eb3fefc"
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_67d6f6e1294c2",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -2025,6 +2905,28 @@
                             "ui": 0,
                             "ui_on_text": "",
                             "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_67d6f705294c3",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -2139,6 +3041,28 @@
                                     "parent_repeater": "field_620043053fef3"
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_67d6f717294c4",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -2167,6 +3091,28 @@
                             "message": "This module is edited in <a href=\"\/wp-admin\/admin.php?page=theme-options\"><u>Theme Settings<\/u><\/a>",
                             "new_lines": "wpautop",
                             "esc_html": 0
+                        },
+                        {
+                            "key": "field_67d6f729294c5",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -2195,6 +3141,28 @@
                             "message": "This module is edited in <a href=\"\/wp-admin\/admin.php?page=theme-options\"><u>Theme Settings<\/u><\/a>",
                             "new_lines": "wpautop",
                             "esc_html": 0
+                        },
+                        {
+                            "key": "field_67d6f738294c6",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -2286,6 +3254,28 @@
                                 "id": ""
                             },
                             "return_format": "array"
+                        },
+                        {
+                            "key": "field_67d6f745294c7",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -2316,6 +3306,28 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                            "key": "field_67d6f776294c8",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -2346,6 +3358,28 @@
                             "toolbar": "full",
                             "media_upload": 1,
                             "delay": 0
+                        },
+                        {
+                            "key": "field_67d6f788294c9",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -2563,43 +3597,13 @@
                                     "delay": 0
                                 }
                             ]
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_63e51829cc336": {
-                    "key": "layout_63e51829cc336",
-                    "name": "icons_labels",
-                    "label": "Icons w\/ Labels",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_63e53a0e74849",
-                            "label": "Heading",
-                            "name": "heading",
-                            "aria-label": "",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
                         },
                         {
-                            "key": "field_63e52f2687631",
-                            "label": "Icons w\/ Labels",
-                            "name": "icons_w_labels",
+                            "key": "field_67d6f79f294ca",
+                            "label": "Developer Tools",
+                            "name": "clone-developer_tools",
                             "aria-label": "",
-                            "type": "repeater",
+                            "type": "clone",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -2608,82 +3612,13 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "collapsed": "",
-                            "min": 0,
-                            "max": 0,
+                            "clone": [
+                                "group_67d6f0d9808aa"
+                            ],
+                            "display": "seamless",
                             "layout": "block",
-                            "button_label": "Add Column",
-                            "rows_per_page": 20,
-                            "sub_fields": [
-                                {
-                                    "key": "field_63e51843cc337",
-                                    "label": "Icon",
-                                    "name": "icon",
-                                    "aria-label": "",
-                                    "type": "image",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "33",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": "",
-                                    "preview_size": "thumbnail",
-                                    "parent_repeater": "field_63e52f2687631"
-                                },
-                                {
-                                    "key": "field_63e52cb0fbf86",
-                                    "label": "FontAwesome Icon",
-                                    "name": "fontawesome_icon",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "Copy and paste the code snippet from <a href=\"https:\/\/fontawesome.com\/search\" target=\"_blank\">FontAwesome Here<\/a>. The icons available are Solid and Regular (free not Pro).",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "33",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "parent_repeater": "field_63e52f2687631"
-                                },
-                                {
-                                    "key": "field_63e5184ecc338",
-                                    "label": "Label",
-                                    "name": "label",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "33",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "parent_repeater": "field_63e52f2687631"
-                                }
-                            ]
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -2715,5 +3650,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1741706919
+    "modified": 1742225400
 }

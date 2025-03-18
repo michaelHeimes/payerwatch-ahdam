@@ -3,6 +3,9 @@
 Stylesheet: Global Stylesheet
 
 *************************************************/
+html {
+	scroll-behavior: smooth;
+}
 .page-template-page-sidebar .site {
 	@extend .grid-x;
 	.banner {
@@ -70,9 +73,11 @@ svg {
 }
 
 .module {
+	scroll-margin-top: 90px;
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
 	@include breakpoint (medium) {
+		scroll-margin-top: 120px;
 		padding-top: 3.5rem;
 		padding-bottom: 3.5rem;	
 	}

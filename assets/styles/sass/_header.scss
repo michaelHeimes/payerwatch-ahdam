@@ -1,5 +1,11 @@
-.error404 header.site-header {
+.error404,
+.no-banner {
+	header.site-header {
 	background-color: $brand-navy;
+	}
+	main {
+		padding-top: 150px;
+	}
 }
 header.site-header {
 	width: 100%;

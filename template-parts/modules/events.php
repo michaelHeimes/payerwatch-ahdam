@@ -2,6 +2,13 @@
 if(!defined('ABSPATH')) {
 	exit;
 }
+
+$dev_tools_element_class = sanitize_title(get_sub_field('dev_tools_element_class')) ?? null;
+$dev_tools_element_id = get_sub_field('dev_tools_element_id') ?? null;
+if (!empty($dev_tools_element_id)) {
+	$dev_tools_element_id = 'id="' . esc_attr(sanitize_title($dev_tools_element_id)) . '"';
+}
+
 $heading = get_sub_field('heading') ?? null;
 
 $today = date('Ymd');	
@@ -32,7 +39,7 @@ if( $theme_brand = 'ahdam' ) {
 $loop = new WP_Query( $args ); 
 if( $loop->have_posts() ):
 ?>
-<section class="events module sky-blue-bg">
+<section <?=$dev_tools_element_id;?>class="events module sky-blue-bg <?=esc_attr($dev_tools_element_class);?>">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			

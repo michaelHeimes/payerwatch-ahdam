@@ -750,7 +750,23 @@
             });
         
         }
-        
+    }
+    
+    _app.scrollTo = function() {
+        if (window.location.hash) {
+            const targetId = window.location.hash.substring(1); // Remove the '#'
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                // Get computed scroll-margin-top
+                const scrollMarginTop = parseInt(getComputedStyle(targetElement).scrollMarginTop, 10) || 0;
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - scrollMarginTop,
+                    behavior: "smooth"
+                });
+            }
+        }
     }
 
             
@@ -779,6 +795,7 @@
         _app.team_cards();
         _app.stats_count();
         _app.appeal_letter();
+        _app.scrollTo();
         //_app.jump_nav();
     }
     

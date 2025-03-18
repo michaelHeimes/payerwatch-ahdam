@@ -1,4 +1,5 @@
-.latest-news-knowledge {
+
+.latest-posts {
 	padding-top: 3.5rem;
 	padding-bottom: 3.5rem;
 	@include breakpoint(medium) {
@@ -8,8 +9,13 @@
 	.tabs {
 		margin-bottom: rem-calc(40);
 		border: 0;
-		.tabs-title > .button {
-
+		.tabs-title {
+			&.is-active {
+				> a.button:not(.team-dot):not(.close-button):not(.enlarge-btn).navy-outline {
+					border-color: $brand-violet;
+					background-color: $brand-violet;
+				}
+			}
 		}
 	}
 	.tabs-content {

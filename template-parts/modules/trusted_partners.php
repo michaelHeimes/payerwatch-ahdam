@@ -2,12 +2,19 @@
 if(!defined('ABSPATH')) {
 	exit;
 }
+
+$dev_tools_element_class = sanitize_title(get_sub_field('dev_tools_element_class')) ?? null;
+$dev_tools_element_id = get_sub_field('dev_tools_element_id') ?? null;
+if (!empty($dev_tools_element_id)) {
+	$dev_tools_element_id = 'id="' . esc_attr(sanitize_title($dev_tools_element_id)) . '"';
+}
+
 $tp_small_heading = get_field('tp_small_heading', 'options') ?? null;
 $tp_large_heading = get_field('tp_large_heading', 'options') ?? null;
 $images = get_field('tp_logos', 'options') ?? null;;
 ?>
 <?php if( !empty( $tp_small_heading ) || !empty( $tp_large_heading ) || !empty( $images ) ):?>
-	<section class="trusted-partners module">
+	<section <?=$dev_tools_element_id;?>class="trusted-partners module <?=esc_attr($dev_tools_element_class);?>">
 		<div class="grid-container">
 			<div class="grid-x grid-padding-x">
 				<div class="cell small-12 text-center">

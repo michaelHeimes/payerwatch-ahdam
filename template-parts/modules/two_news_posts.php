@@ -2,6 +2,13 @@
 if(!defined('ABSPATH')) {
 	exit;
 }
+
+$dev_tools_element_class = sanitize_title(get_sub_field('dev_tools_element_class')) ?? null;
+$dev_tools_element_id = get_sub_field('dev_tools_element_id') ?? null;
+if (!empty($dev_tools_element_id)) {
+	$dev_tools_element_id = 'id="' . esc_attr(sanitize_title($dev_tools_element_id)) . '"';
+}
+
 $args = array(  
 	'post_type' => 'news',
 	'post_status' => 'publish',
@@ -12,7 +19,7 @@ $loop = new WP_Query( $args );
 
 if( $loop->have_posts() ):
 ?>
-<section class="two-news-posts module">
+<section <?=$dev_tools_element_id;?>class="two-news-posts module <?=esc_attr($dev_tools_element_class);?>">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x">
 			

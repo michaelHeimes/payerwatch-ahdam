@@ -63,9 +63,7 @@ $link = get_sub_field('button_link') ?? null;
 							    	</span>
 							    </span>
 							    <span class="arrow">
-									<svg id="Symbol_82" data-name="Symbol 82" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
-									  <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H0V9.039H12.052L6.545,14.545,8,16l8-8Z" fill="#050d57"/>
-									</svg>
+									<svg data-name="Symbol 82" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path data-name="Path 10" d="M8 0 6.545 1.455l5.506 5.506H0v2.078h12.052l-5.507 5.506L8 16l8-8Z" fill="#050d57"/></svg>
 							    </span>
 							</a>
 						</div>

@@ -1,0 +1,21 @@
+.anchor-links {
+	font-size: rem-calc(15);
+	font-weight: 700;
+	nav { 
+		border-top: 1px solid $brand-navy;
+		border-bottom: 1px solid $brand-navy;
+		padding-top: 1.75rem;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	li.cell {
+		margin-bottom: 1.75rem;
+		padding-left: 0;
+		padding-right: 1.92rem;
+	}
+	a {
+		color: $brand-navy;
+	}
+}

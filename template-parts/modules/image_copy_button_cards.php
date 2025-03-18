@@ -2,6 +2,13 @@
 if(!defined('ABSPATH')) {
 	exit;
 }
+
+$dev_tools_element_class = sanitize_title(get_sub_field('dev_tools_element_class')) ?? null;
+$dev_tools_element_id = get_sub_field('dev_tools_element_id') ?? null;
+if (!empty($dev_tools_element_id)) {
+	$dev_tools_element_id = 'id="' . esc_attr(sanitize_title($dev_tools_element_id)) . '"';
+}
+
 $size = 'full';
 $left_card = get_sub_field('left_card') ?? null;
 $left_card_image = $left_card['image'] ?? null;
@@ -13,7 +20,7 @@ $right_card_image = $right_card['image'] ?? null;
 $right_card_copy = $right_card['copy'] ?? null;
 $right_card_link = $right_card['button_link'] ?? null;
 ?>
-<section class="image-copy-button-cards module" data-equalizer="icb-card-img" data-equalize-on="medium">
+<section <?=$dev_tools_element_id;?>class="image-copy-button-cards module  <?=esc_attr($dev_tools_element_class);?>" data-equalizer="icb-card-img" data-equalize-on="medium">
 	<div class="grid-container" data-equalizer="icb-card-content" data-equalize-on="medium">
 		<div class="grid-x grid-padding-x">
 			

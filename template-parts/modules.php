@@ -110,6 +110,22 @@ if(!defined('ABSPATH')) {
 	
 	get_template_part('template-parts/modules/latest_industry_news_knowledge_center');
 	
+	elseif ( get_row_layout() == 'latest_posts' ) : 
+	
+	get_template_part('template-parts/modules/latest_posts');
+	
+	elseif ( get_row_layout() == 'member_dashboard_header' ) : 
+	
+	get_template_part('template-parts/modules/member_dashboard_header');
+	
+	elseif ( get_row_layout() == 'anchor_links' ) : 
+	
+	get_template_part('template-parts/modules/anchor_links');
+	
+	elseif ( get_row_layout() == 'copy_download_buttons_and_image' ) : 
+	
+	get_template_part('template-parts/modules/copy_download_buttons_and_image');
+	
 	endif;?>
 	
 <?php endwhile;?>

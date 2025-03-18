@@ -2,6 +2,13 @@
 if(!defined('ABSPATH')) {
 	exit;
 }
+
+$dev_tools_element_class = sanitize_title(get_sub_field('dev_tools_element_class')) ?? null;
+$dev_tools_element_id = get_sub_field('dev_tools_element_id') ?? null;
+if (!empty($dev_tools_element_id)) {
+	$dev_tools_element_id = 'id="' . esc_attr(sanitize_title($dev_tools_element_id)) . '"';
+}
+
 $size = 'full';
 $image = get_sub_field('graphic') ?? null;
 $stat_1 = get_sub_field('stat_1') ?? null;
@@ -15,7 +22,7 @@ $number2 = $stat_2['number'];
 $after2 = $stat_2['after_number'];	
 $label2 = $stat_2['label'];	
 ?>
-<section class="graphic-and-stats module">
+<section <?=$dev_tools_element_id;?>class="graphic-and-stats module <?=esc_attr($dev_tools_element_class);?>">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x small-up-1 medium-up-3 tablet-up-3 align-center align-middle">
 			<div class="cell col">

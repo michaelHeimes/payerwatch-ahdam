@@ -2,6 +2,13 @@
 if(!defined('ABSPATH')) {
 	exit;
 }
+
+$dev_tools_element_class = sanitize_title(get_sub_field('dev_tools_element_class')) ?? null;
+$dev_tools_element_id = get_sub_field('dev_tools_element_id') ?? null;
+if (!empty($dev_tools_element_id)) {
+	$dev_tools_element_id = 'id="' . esc_attr(sanitize_title($dev_tools_element_id)) . '"';
+}
+
 $size = 'full';
 $orientation = get_sub_field('orientation') ?? null;
 $pull_wide = get_sub_field('pull_wide_optional') ?? null;
@@ -19,7 +26,7 @@ $mint_btn_link = get_sub_field('button_link') ?? null;
 $blue_btn_link = get_sub_field('button_link_2') ?? null;
 $outline_btn_link = get_sub_field('outline_button_link') ?? null;
 ?>
-<section class="copy-image module <?php echo $pull_wide;?> <?php echo $img_or_vid;?> <?php if($click_enlarge):?> click-enlarge <?php endif;?> <?php echo $orientation;?> ">
+<section <?=$dev_tools_element_id;?>class="copy-image module <?=esc_attr($dev_tools_element_class);?> <?php echo $pull_wide;?> <?php echo $img_or_vid;?> <?php if($click_enlarge):?> click-enlarge <?php endif;?> <?php echo $orientation;?> ">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x<?php if( $orientation == 'copy-left' ):?> medium-flex-dir-row-reverse<?php endif;?>">
 			

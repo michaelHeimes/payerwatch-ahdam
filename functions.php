@@ -282,3 +282,19 @@ require_once(get_template_directory().'/inc/admin.php');
 
 // Image Sizes
 require_once(get_template_directory().'/inc/image-sizes.php');
+
+
+function custom_login_redirect($redirect_to, $request, $user) {
+	// Ensure we have a valid user object
+	if (!is_wp_error($user) && isset($user->roles) && is_array($user->roles)) {
+		if (!in_array('administrator', $user->roles)) { // Roles are lowercase
+			return home_url('/member-dashboard/');
+		} else {
+			return home_url('/wp-admin/');
+		}
+	}
+	return $redirect_to;
+}
+add_filter('login_redirect', 'custom_login_redirect', 10, 3);
+
+

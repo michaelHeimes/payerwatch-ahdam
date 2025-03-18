@@ -3,6 +3,12 @@ if(!defined('ABSPATH')) {
 	exit;
 }
 
+$dev_tools_element_class = sanitize_title(get_sub_field('dev_tools_element_class')) ?? null;
+$dev_tools_element_id = get_sub_field('dev_tools_element_id') ?? null;
+if (!empty($dev_tools_element_id)) {
+	$dev_tools_element_id = 'id="' . esc_attr(sanitize_title($dev_tools_element_id)) . '"';
+}
+
 $block = get_row_index();
 
 $news_args = array(  
@@ -20,7 +26,7 @@ $knowledge_center_args = array(
 $knowledge_center_loop = new WP_Query( $knowledge_center_args ); 
 
 ?>
-<section class="latest-news-knowledge module">
+<section <?=$dev_tools_element_id;?>class="latest-news-knowledge module <?=esc_attr($dev_tools_element_class);?>">
 	<div class="grid-container">
 		<ul class="tabs grid-x grid-padding-x" data-tabs id="latest-news-knowledge-<?=$block;?>">
 				<?php if( $news_loop->have_posts() ):?>

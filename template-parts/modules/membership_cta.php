@@ -2,6 +2,13 @@
 if(!defined('ABSPATH')) {
 	exit;
 }
+
+$dev_tools_element_class = sanitize_title(get_sub_field('dev_tools_element_class')) ?? null;
+$dev_tools_element_id = get_sub_field('dev_tools_element_id') ?? null;
+if (!empty($dev_tools_element_id)) {
+	$dev_tools_element_id = 'id="' . esc_attr(sanitize_title($dev_tools_element_id)) . '"';
+}
+
 $mcta_pricepoint = get_field('mcta_pricepoint', 'option') ?? null;
 $mcta_image = get_field('mcta_image', 'option') ?? null;
 $mcta_heading = get_field('mcta_heading', 'option') ?? null;
@@ -19,7 +26,7 @@ if( $theme_brand = 'ahdam' ) {
 
 if( !empty($mcta_pricepoint) || !empty($mcta_image) || !empty($mcta_heading) || !empty($mcta_text) || !empty($mcta_button_link) || !empty($mcta_disclaimer_copy) ):
 ?>
-<section class="membership-cta module">
+<section <?=$dev_tools_element_id;?>class="membership-cta module <?=esc_attr($dev_tools_element_class);?>">
 	<div class="grid-container">
 		<div class="grid-x grid-padding-x align-justify">
 			<?php if( !empty($mcta_pricepoint) || !empty($mcta_image) ):?>

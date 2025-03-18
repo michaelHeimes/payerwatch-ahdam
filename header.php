@@ -10,6 +10,18 @@
  */
 $color_theme = get_field('color_theme') ?? null;
 $theme_brand = get_field('theme_brand', 'option') ?? null;
+
+$modules = get_field('modules');
+$banner_class = '';
+ 
+if (!empty($modules)) {
+	$first_module = $modules[0]['acf_fc_layout'] ?? '';
+  
+	if ($first_module !== 'page_banner' && $first_module !== 'home_banner') {
+		$banner_class = 'no-banner';
+	}
+}
+
 ?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
@@ -21,7 +33,7 @@ $theme_brand = get_field('theme_brand', 'option') ?? null;
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class('picked-color color-theme-' . $color_theme . ' brand-' . $theme_brand); ?>>
+<body <?php body_class('picked-color color-theme-' . $color_theme . ' brand-' . $theme_brand . ' ' . $banner_class); ?>>
 	<?php wp_body_open(); ?>
 			<a class="skip-link screen-reader-text show-on-focus" href="#primary"><?php esc_html_e( 'Skip to content', 'trailhead' ); ?></a>
 		
